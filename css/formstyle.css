@@ -19,7 +19,7 @@ body {
 }
 /*form styles*/
 #msform {
-	width: 600px;
+	width: 640px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
@@ -96,7 +96,7 @@ body {
 	color: black;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 25%;
+	width: 16.67%;
 	float: left;
 	position: relative;
 }
@@ -140,6 +140,7 @@ input[type=checkbox] {
 input[type=radio] {
 	visibility: hidden;
 }
+
 .squaredOne {
 	width: 150px;
 	height: 28px;
@@ -151,7 +152,7 @@ input[type=radio] {
 	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
 	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
-	margin: 20px auto;
+	margin: 5px auto;
 	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
@@ -160,6 +161,7 @@ input[type=radio] {
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none; 
 }
+
 
 .squaredOne label {
 	cursor: pointer;
@@ -290,16 +292,12 @@ input[type=radio] {
 
 }
 
-#history label:after{
+#history label:after{	
 	content: 'History';
 
 }
-#biology label:after{
-	content: 'Biology';
-
-}
-#biology label:after{
-	content: 'Biology';
+#economics label:after{
+	content: 'Economics';
 
 }
 #biology label:after{

@@ -257,8 +257,10 @@
     <ul id="progressbar">
         <li class="active">Welcome</li>
         <li>About Me</li>
-        <li>So much swag</li>
-        <li></li> 
+        <li>Academics</li>
+        <li>My Interests</li> 
+        <li>Mentoring</li> 
+        <li>Mentoring</li> 
     </ul>
     <!-- fieldsets -->
     <fieldset>
@@ -305,61 +307,132 @@
         <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">Interests</h2>
+        <h2 class="fs-title">Academic Interests</h2>
         <h3 class="fs-subtitle">So what do you like?</h3>
-        <div class="squaredOne" id="math">
-             <input type="checkbox" value="1" id="mathl" name="math"/>
-            <label for="mathl">Math</label>
-        </div>
-        <div class="squaredOne" id="english">
+<table>
+  <tr>
+    <th> <div class="squaredOne" id="math">
+             <input type="checkbox" value="1" id="mathl" name="math">
+            <label for="mathl">Math</label></div></th>
+    <th> <div class="squaredOne" id="english">
              <input type="checkbox" value="1" id="englishl" name="english"/>
-            <label for="englishl">English</label>
-        </div>
-        <div class="squaredOne" id="art">
+            <label for="englishl">English</label></div></th>
+    <th>  <div class="squaredOne" id="art">
              <input type="checkbox" value="1" id="artl" name="art"/>
-            <label for="artl">Art</label>
-        </div>
-        <div class="squaredOne" id="physics">
+            <label for="artl">Art</label></div></th>
+
+  </tr>
+    <tr>
+    <th> <div class="squaredOne" id="physics">
              <input type="checkbox" value="1" id="physicsl" name="physics"/>
             <label for="physicsl">Physics</label>
-        </div>
-        <div class="squaredOne" id="biology">
+        </div></th>
+    <th> <div class="squaredOne" id="biology">
              <input type="checkbox" value="1" id="biologyl" name="biology"/>
             <label for="biologyl">Biology</label>
-        </div>
-        </div>
-        <div class="squaredOne" id="history">
+        </div></th>
+    <th><div class="squaredOne" id="history">
              <input type="checkbox" value="1" id="historyl" name="history"/>
             <label for="historyl">History</label>
-        </div>
-        </div>
-        <div class="squaredOne" id="economics">
-             <input type="checkbox" value="1" id="economicsl" name="economics"/>
-            <label for="economicsl">Economics</label>
-        </div>
-        </div>
-        <div class="squaredOne" id="chemistry">
+        </div></th>
+  </tr>
+  <tr>
+    <th><div class="squaredOne" id="chemistry">
              <input type="checkbox" value="1" id="chemistryl" name="chemistry"/>
             <label for="chemistryl">Chemistry</label>
-        </div>
+        </div></th>
+    <th> <div class="squaredOne" id="economics">
+             <input type="checkbox" value="1" id="economicsl" name="economics"/>
+            <label for="economicsl">Economics</label>
+        </div></th>
+    <th><div class="squaredOne" id="history">
+             <input type="checkbox" value="1" id="historyl" name="history"/>
+            <label for="historyl">History</label>
+        </div></th>
+  </tr>
 
 
-        <input type="text" name="interestone" placeholder="" />
-        <input type="text" name="interesttwo" placeholder="" />
-        <input type="text" name="interestthree" placeholder="" />
+</table>
+
+
         <input type="button" name="previous" class="previous action-button" value="Previous" />
-       
-        <input type="submit" value="Register" />
+       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">So much swag</h2>
-        <h3 class="fs-subtitle">Yay.</h3>
+        <h2 class="fs-title">Interests</h2>
+        <h3 class="fs-subtitle">Share your 5 favorite hobbies/extracurriculars</h3>
         <input type="text" name="interestone" placeholder="" />
         <input type="text" name="interesttwo" placeholder="" />
         <input type="text" name="interestthree" placeholder="" />
+        <input type="text" name="interestfour" placeholder="" />
+        <input type="text" name="interestfive" placeholder="" />
         <input type="button" name="previous" class="previous action-button" value="Previous" />
-       
+        <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">In which areas would you most value a mentor?</h2>
+        <h3 class="fs-subtitle">Choose as many as you'd like</h3>
+       <div class="squaredOne" id="square1">
+             <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Academics</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">Careers</label>
+        </div>
+        <div class="squaredOne" id="square3">
+             <input type="radio" value="1" id="squaredOne3" name="hschool"/>
+            <label for="squaredOne3">Social Life</label>
+        </div>
+        <div class="squaredOne" id="square4">
+             <input type="radio" value="0" id="squaredOne4" name="hschool"/>
+            <label for="squaredOne4">Applications</label>
+        </div>
+         <div class="squaredOne" id="square5">
+             <input type="checkbox" value="" id="mentee" />
+            <label for="mentee">Scholarships</label>
+        </div>
+        <div class="squaredOne" id="square6">
+             <input type="checkbox" value="" id="mentor" />
+             <label for="mentor">Transitioning to College</label>
+        </div>
+         <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+        <fieldset>
+        <h2 class="fs-title">How would you prefer to connect with your mentor/mentee</h2>
+        <h3 class="fs-subtitle">Choose as many as you'd like</h3>
+       <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Female</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">Male</label>
+        </div>
+
+        <h3 class="fs-subtitle"> Year in School</h3>
+                <div class="squaredOne" id="square3">
+             <input type="radio" value="1" id="squaredOne3" name="hschool"/>
+            <label for="squaredOne3">High School</label>
+        </div>
+        <div class="squaredOne" id="square4">
+             <input type="radio" value="0" id="squaredOne4" name="hschool"/>
+            <label for="squaredOne4">College</label>
+        </div>
+
+        <h3 class="fs-subtitle"> Interested in becoming a...</h3>
+         <div class="squaredOne" id="square5">
+             <input type="checkbox" value="" id="mentee" />
+            <label for="mentee">Mentee</label>
+        </div>
+        <div class="squaredOne" id="square6">
+             <input type="checkbox" value="" id="mentor" />
+             <label for="mentor">Mentor</label>
+        </div>
         <input type="submit" value="Register" />
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
 </form>
 
