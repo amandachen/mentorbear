@@ -251,22 +251,28 @@
 
                                                             <li>
                                                                 <i class="glyphicon glyphicon-calendar"></i>
-                                                                <label>Date of birth</label>
-                                                                <span class="value">March 18, 1988</span>
+                                                                <label>School</label>
+                                                                <span class="value"><?php if($_SESSION['userprof']['hschool']==1) {
+                                                                        echo "High School";
+                                                                    } else {
+                                                                        echo "College";
+                                                                    }
+
+                                                                     ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Adress</label>
-                                                                <span class="value">San Francisco , CA</span>
+                                                                <label>Zip Code</label>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
                                                             <li>
                                                                 <i class="glyphicon glyphicon-envelope"></i>
                                                                 <label>Email</label>
-                                                                <span class="value">brown.smith@gmail.com</span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
@@ -289,7 +295,7 @@
 
                                                         <p style="margin-bottom:20px">
                                                             <i class="fa fa-quote-left"></i>       
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla sagittis, scelerisque mi vitae, congue turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla sagittis, scelerisque mi vitae, congue turpis.
+                                                            <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); ?>
                                                         </p>
 
                                                         <p style="margin-bottom:20px">

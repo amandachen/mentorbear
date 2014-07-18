@@ -153,16 +153,16 @@
                 salt, 
                 email,
                 female, 
-                hschool,
-                math
+                mentor,
+                mentee
             ) VALUES ( 
                 :username, 
                 :password, 
                 :salt, 
                 :email, 
                 :female,
-                :hschool,
-                :math
+                :mentor,
+                :mentee
             ) 
         "; 
          
@@ -202,8 +202,8 @@
             ':salt' => $salt, 
             ':email' => $_POST['email'], 
             ':female' => $_POST['female'], 
-            ':hschool' => $_POST['hschool'], 
-            ':math' => $_POST['math'] 
+            'mentor' => $_POST['mentor'], 
+            'mentee' => $_POST['mentee'] 
         ); 
          
          

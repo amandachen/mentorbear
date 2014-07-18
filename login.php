@@ -21,11 +21,12 @@
                 password, 
                 salt, 
                 email 
-            FROM users 
+            FROM userz
             WHERE 
                 username = :username 
         "; 
          
+
         // The parameter values 
         $query_params = array( 
             ':username' => $_POST['username'] 
@@ -87,7 +88,77 @@
             // or not the user is logged in.  We can also use it to retrieve 
             // the user's details. 
             $_SESSION['user'] = $row; 
-             
+
+            $query_paramsprof = array( 
+                ':id' => $row['id']
+                ); 
+
+
+            $queryprof = " 
+            SELECT  
+                genderpref, 
+                id,
+                female, 
+                hschool, 
+                math,
+                english,
+                history,
+                chemistry,
+                economics,
+                engineering,
+                physics,
+                computers,
+                biology,
+                art,
+                music,
+                literature,
+                extra1,
+                extra2,
+                extra3,
+                extra4,
+                extra5,
+                academics,
+                career,
+                sociallife,
+                applications,
+                scholarship,
+                transitioning,
+                email,
+                inperson,
+                vchat,
+                phone,
+                im,
+                other,
+                zipcode,
+                time,
+                available,
+                me
+
+                FROM profiles
+                WHERE 
+                id = :id
+                "; 
+
+                try 
+                { 
+                    // Execute the query against the database 
+                    $stmtprof = $db->prepare($queryprof); 
+                    $resultprof = $stmtprof->execute($query_paramsprof); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run query: " . $ex->getMessage()); 
+                } 
+                 
+                // Retrieve the user data from the database.  If $row is false, then the username 
+                // they entered is not registered. 
+                $rowprof = $stmtprof->fetch(); 
+
+                $_SESSION['userprof'] = $rowprof; 
+
+
             // Redirect the user to the private members-only page. 
             header("Location: private.php"); 
             die("Redirecting to: private.php"); 
