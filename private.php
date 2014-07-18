@@ -169,7 +169,17 @@
                                             <!-- End Profile Description -->  
 
 
-                                            <!-- Name -->                                            <!-- End Name -->  
+                                            <!-- Name -->
+                                            <div id="profile_social">
+                                                <h6>My Social Profiles</h6>
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa fa-dribbble"></i></a>
+                                                <a href="#"><i class="fa fa-foursquare"></i></a>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <!-- End Name -->  
 
                                         </div>
 
@@ -207,7 +217,8 @@
                                                 <i class="fa fa-envelope icon_menu"></i> 
                                             </li>
 
-                                           
+                                            <a href="#" id="print"><i class="fa fa-print icon_print"></i> </a>
+                                            <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
 
                                         </ul>
                                         <!-- /resp-tabs-list -->
@@ -777,7 +788,7 @@
                                             <!-- .portfolio -->
                                             <div id="portfolio" class="content_2">
                                                 <!-- .title -->
-                                                <h1 class="h-bloc">Find Mentors</h1>
+                                                <h1 class="h-bloc">Portfolio - My Works</h1>
 
                                                 <!-- .container-portfolio -->
                                                     
@@ -869,7 +880,7 @@
                                                             <img src="http://placehold.it/220x165" />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                <p>A wonderful serenity has taken possession of my entire soulz.</p>
                                                                 
                                                                  <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
