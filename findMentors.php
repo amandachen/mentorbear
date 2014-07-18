@@ -1,5 +1,9 @@
 <?php 
 
+<a href="memberlist.php">Memberlist</a><br /> 
+<a href="edit_account.php">Edit Account</a><br /> 
+<a href="findmentors.php">FindMentors</a><br /> 
+<a href="logout.php">Logout</a>
     // First we execute our common code to connection to the database and start the session 
     require("common.php"); 
      
