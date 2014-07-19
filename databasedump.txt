@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Jul 19, 2014 at 03:55 AM
+-- Generation Time: Jul 19, 2014 at 06:51 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
@@ -13,47 +13,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `MentorTest`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mentees`
---
-
-CREATE TABLE `mentees` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `mentorid1` tinyint(1) DEFAULT NULL,
-  `mentorid2` tinyint(1) DEFAULT NULL,
-  `mentorid3` tinyint(1) DEFAULT NULL,
-  `collegew1` varchar(64) NOT NULL,
-  `collegew2` varchar(64) NOT NULL,
-  `collegew3` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mentors`
---
-
-CREATE TABLE `mentors` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `college` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `photos`
---
-
-CREATE TABLE `photos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `photo` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -98,37 +57,14 @@ CREATE TABLE `profiles` (
   `zipcode` int(1) NOT NULL,
   `time` int(1) NOT NULL,
   `available` int(1) NOT NULL,
-  `me` text NOT NULL,
+  `me` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `profiles`
 --
 
 INSERT INTO `profiles` (`genderpref`, `id`, `female`, `hschool`, `math`, `english`, `history`, `chemistry`, `economics`, `engineering`, `physics`, `computers`, `biology`, `art`, `music`, `literature`, `extra1`, `extra2`, `extra3`, `extra4`, `extra5`, `academics`, `career`, `sociallife`, `applications`, `scholarship`, `transitioning`, `email`, `inperson`, `vchat`, `phone`, `im`, `other`, `zipcode`, `time`, `available`, `me`) VALUES
-(2, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 'hey', 'yo', 'dh', 'dhu', 'dhj', 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 'hey', 60614, 1, 1, 'whatup');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userz`
---
-
-CREATE TABLE `userz` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(64) NOT NULL,
-  `salt` char(16) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `mentor` tinyint(1) NOT NULL,
-  `mentee` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `userz`
---
-
-INSERT INTO `userz` (`id`, `username`, `password`, `salt`, `email`, `mentor`, `mentee`) VALUES
-(1, 'Amanda', 'b93d6e9bcc2079b60579a5b309c370837fbeaeb33b441405d6694610af586fa4', '2651d2102ffaaa5', 'Amanda@gmail.com', 0, 1);
+(2, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 'Track and Field', 'Computer Club', 'Basketball', 'Girl Scouts', 'Jet Skiing', 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 'hey', 60614, 1, 1, 'Hi! I''m Amanda. I''m a rising high school senior and really want a good mentor.'),
+(3, 2, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 'Volleyball', 'Crew', 'Stage Crew', 'Boy Scouts', 'National Honor Society', 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 'telegram', 60622, 3, 4, 'Hi I''m Spencer! I go to Yale and would love to mentor you!');
