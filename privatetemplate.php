@@ -1298,7 +1298,7 @@
 
                                                         <p style="margin-bottom:20px">
                                                             <i class="fa fa-quote-left"></i>       
-                                                           <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); ?>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla sagittis, scelerisque mi vitae, congue turpis. 
 
                                                         </p>
 
@@ -1323,25 +1323,43 @@
                                                 <div class="row" id="services">
                                                     <div class="col-md-12">
                                                         <div class="title_content">
-                                                            <div class="text_content">Academics</div>
+                                                            <div class="text_content">Academic Interests</div>
                                                             <div class="clear"></div>
                                                         </div>
-                                                        
-                                                         
-
-                                                        <?php 
-                                                        $academics = array_keys($_SESSION['userprof'], "1", true);
-
-                                                        foreach ($academics as $value)  {
-                                                            
-                                                                echo $value;
-                                                              
-                                                        }
-
-                                                        ?>
 
 
-                                                       
+                                                        <div class="col-md-4 pack-service">
+                                                            <div class="service">
+                                                                <div class="service-icon"><i class="fa fa-tag"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Making Money</h6>
+                                                                    <?php if($_SESSION['userprof']['math']==1) {
+                                                                        echo "Math";
+                                                                    } 
+
+                                                                     ?>
+                                                                    <p>Fusce quis interdum ipsum.Suspendi suscipit vehicula sapienid mattis. Lorem ipsum amet consectetur.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 pack-service">
+                                                            <div class="service">
+                                                                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Easy to Customize</h6>
+                                                                    <p>Fusce quis interdum ipsum.Suspendi suscipit vehicula sapienid mattis. Lorem ipsum amet consectetur.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 pack-service">
+                                                            <div class="service">
+                                                                <div class="service-icon"><i class="fa fa-arrows-alt"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Moving Let Us Help</h6>
+                                                                    <p>Fusce quis interdum ipsum.Suspendi suscipit vehicula sapienid mattis. Lorem ipsum amet consectetur.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div> 
                                                 </div><!-- End Services -->
 
@@ -1349,20 +1367,11 @@
                                                 <div class="clear"></div>
                                                 <div class="border-list"></div>
 
-                                                <div class="row" id="services">
-                                                    <div class="col-md-12">
-                                                        <div class="title_content">
-                                                            <div class="text_content">Interests</div>
-                                                            <div class="clear"></div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>    
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="bottom-p">
                                                             <div class="title_content">
-                                                                <div class="text_content">Mentoring Details</div>
+                                                                <div class="text_content">My Services 2</div>
                                                                 <div class="clear"></div>
                                                             </div>
 

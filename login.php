@@ -156,7 +156,7 @@
                 // they entered is not registered. 
                 $rowprof = $stmtprof->fetch(); 
 
-                $_SESSION['userprof'] = $rowprof; 
+                $_SESSION['userprof'][] = $rowprof; 
 
 
             // Redirect the user to the private members-only page. 
