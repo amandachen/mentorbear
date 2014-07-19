@@ -1329,19 +1329,20 @@
                                                         
                                                          
 
-                                                        <?php 
-                                                        $academics = array_keys($_SESSION['userprof'], "1", true);
-
-                                                        foreach ($academics as $value)  {
-                                                            
-                                                                echo $value;
-                                                              
-                                                        }
-
-                                                        ?>
+                                                        
 
 
-                                                       
+                                                        <?php if($_SESSION['userprof']['math']==1) {
+                                                                        echo "Math";
+                                                                    } 
+
+                                                                     
+                                                        if($_SESSION['userprof']['english']==1) {
+                                                                        echo "English";
+                                                                    } 
+
+                                                                     
+                                                       ?>
                                                     </div> 
                                                 </div><!-- End Services -->
 
