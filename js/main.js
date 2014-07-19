@@ -63,6 +63,20 @@ jQuery(document).ready(function($) {
 	}, function() {
 	$(this).find(".icon_menu").removeClass("icon_menu_hover");
 	});
+
+
+
+
+
+
+
+
+
+
+	$('#mentor1').click(function() {
+	console.log("hey")
+	$('#portfolio').animate({scrollTop: 400}, 600);
+	});
 	
 	/* ---------------------------------------------------------------------- */
 	/* --------------------------- Scroll tabs ------------------------------ */
