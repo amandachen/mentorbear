@@ -1396,7 +1396,7 @@
                                                         </div>
                                                         <div class="col-md-4 pack-service">
                                                             <div class="service center">
-                                                                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                                                                <div class="service-icon"><i class="fa fa-star"></i></div>
                                                                 <div class="service-detail">
                                                                     <h6>Extracurriculars</h6>
                                                                     <h6></h6>
@@ -1411,7 +1411,7 @@
 
                                                         <div class="col-md-4 pack-service">
                                                             <div class="service center">
-                                                                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                                                                <div class="service-icon"><i class="fa fa-star"></i></div>
                                                                 <div class="service-detail">
                                                                     <h6>Favorite Animals</h6>
                                                                     <h6></h6>
