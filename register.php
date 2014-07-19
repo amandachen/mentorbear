@@ -259,14 +259,17 @@
         <li>About Me</li>
         <li>Academics</li>
         <li>My Interests</li> 
+        <li>Gender Preference</li> 
         <li>Mentoring</li> 
-        <li>Mentoring</li> 
+        <li>Connect</li>  
+        <li>Time</li> 
+        <li>Available</li>  
     </ul>
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">Create your account</h2>
         <h3 class="fs-subtitle">Welcome to MentorBear!</h3>
-        <input type="text" name="username" placeholder="name" />
+        <input type="text" name="username" placeholder="Full Name" />
         <input type="text" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
         <input type="password" name="cpass" placeholder="Confirm Password" />
@@ -345,9 +348,9 @@
              <input type="checkbox" value="1" id="economicsl" name="economics"/>
             <label for="economicsl">Economics</label>
         </div></th>
-    <th><div class="squaredOne" id="history">
-             <input type="checkbox" value="1" id="historyl" name="history"/>
-            <label for="historyl">History</label>
+    <th> <div class="squaredOne" id="Languages">
+             <input type="checkbox" value="1" id="languagesl" name="languages"/>
+            <label for="languagesl">Languages</label>
         </div></th>
   </tr>
 
@@ -370,6 +373,23 @@
         <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
+        <h2 class="fs-title">Do you have a gender preference for your mentor/mentee?</h2>
+       <div class="squaredOne" id="female">
+             <input type="radio" value="1" id="squaredOne" name="preference" />
+            <label for="female1">Female</label>
+        </div>
+        <div class="squaredOne" id="male">
+             <input type="radio" value="0" id="squaredOne2" name="preference"/>
+            <label for="male1">Male</label>
+        </div>
+        <div class="squaredOne" id="both">
+             <input type="radio" value="2" id="squaredOne3" name="preference"/>
+            <label for="both1">I don't mind</label>
+        </div>
+         <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+            <fieldset>
         <h2 class="fs-title">In which areas would you most value a mentor?</h2>
         <h3 class="fs-subtitle">Choose as many as you'd like</h3>
        <div class="squaredOne" id="square1">
@@ -404,36 +424,84 @@
         <h3 class="fs-subtitle">Choose as many as you'd like</h3>
        <div class="squaredOne" id="square1">
             <input type="radio" value="1" id="squaredOne" name="female" />
-            <label for="squaredOne">Female</label>
+            <label for="squaredOne">In-Person</label>
         </div>
         <div class="squaredOne" id="square2">
              <input type="radio" value="0" id="squaredOne2" name="female"/>
-            <label for="squaredOne2">Male</label>
+            <label for="squaredOne2">E-mail</label>
         </div>
-
-        <h3 class="fs-subtitle"> Year in School</h3>
-                <div class="squaredOne" id="square3">
-             <input type="radio" value="1" id="squaredOne3" name="hschool"/>
-            <label for="squaredOne3">High School</label>
+         <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Video Chat</label>
         </div>
-        <div class="squaredOne" id="square4">
-             <input type="radio" value="0" id="squaredOne4" name="hschool"/>
-            <label for="squaredOne4">College</label>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">Instant Message</label>
         </div>
-
-        <h3 class="fs-subtitle"> Interested in becoming a...</h3>
-         <div class="squaredOne" id="square5">
-             <input type="checkbox" value="" id="mentee" />
-            <label for="mentee">Mentee</label>
+         <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Phone</label>
         </div>
-        <div class="squaredOne" id="square6">
-             <input type="checkbox" value="" id="mentor" />
-             <label for="mentor">Mentor</label>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">Other</label>
         </div>
-        <input type="submit" value="Register" />
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
+         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
+        </fieldset>
+        <fieldset>
+        <h2 class="fs-title">How much time would you like to spend with your mentor/mentee?</h2>
+       <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">15-30 minutes</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">30-45 minutes</label>
+        </div>
+         <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">45-60 minutes</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">1-1.5 hours</label>
+        </div>
+         <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">1.5-3 hours</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">3+ hours</label>
+        </div>
+
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+
+    </fieldset>
+        </fieldset>
+        <fieldset>
+        <h2 class="fs-title">When would you be most available?</h2>
+       <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Weekday nights</label>
+        </div>
+        <div class="squaredOne" id="square2">
+             <input type="radio" value="0" id="squaredOne2" name="female"/>
+            <label for="squaredOne2">Saturdays</label>
+        </div>
+         <div class="squaredOne" id="square1">
+            <input type="radio" value="1" id="squaredOne" name="female" />
+            <label for="squaredOne">Sundays</label>
+        </div>
+
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+
+        <input type="submit" value="Register" />
+    </fieldset>
+
 </form>
 
 <!-- jQuery -->
