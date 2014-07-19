@@ -212,12 +212,12 @@
 
                                             <li class="tabs-resume hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="resume"> 
                                                 <span class="tite-list">resume</span>
-                                                <i class="fa fa-tasks icon_menu"></i>
+                                                <i class="fa fa-briefcase icon_menu"></i>
                                             </li>
 
                                             <li class="tabs-portfolio hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="portfolio"> 
                                                 <span class="tite-list">portfolio</span>
-                                                <i class="fa fa-briefcase icon_menu"></i>
+                                                <i class="fa fa-tasks icon_menu"></i>
                                             </li>
 
                                             
@@ -1282,18 +1282,25 @@
                                                             </li>
 
                                                             <li>
-                                                                <i class="glyphicon glyphicon-globe"></i>
-                                                                <label>Website</label>
-                                                                <span class="value"><a href="#" target="_blank">www.brown-smith.com</a></span>
+
+                                                                <?php if($_SESSION['user']['mentor']==1) {
+                                                                        ?> <i class="glyphicon glyphicon-globe"></i>
+                                                                <label>College</label>
+                                                                <span class="value"><?php echo $_SESSION['useror']['college'] ?></span>
                                                                 <div class="clear"></div>
+                                                                    <?php } 
+                                                    
+                                                                     ?>
+
+                                                                
                                                             </li>
 
                                                         </ul>
 
 
                                                         <p style="margin-bottom:20px">
-                                                            <i class="fa fa-quote-left"></i>       
-                                                            hey <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); ?>
+                                                            
+                                                            
                                                         </p>
 
                                                         <p style="margin-bottom:20px">
@@ -1323,26 +1330,106 @@
                                                 <div class="row" id="services">
                                                     <div class="col-md-12">
                                                         <div class="title_content">
-                                                            <div class="text_content">Academics</div>
+                                                            <div class="text_content">Interests</div>
                                                             <div class="clear"></div>
                                                         </div>
                                                         
+                                                         <div class="col-md-4 pack-service center">
+                                                            <div class="service">
+                                                                <div class="service-icon"><i class="fa fa-tag"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Academics</h6>
+                                                                    <h6></h6>
+                                                                    <?php 
+
+                                                        if($_SESSION['userprof']['art']==1) {
+                                                                        echo "Art <br>";
+                                                        } 
+                                                        if($_SESSION['userprof']['biology']==1) {
+                                                                        echo "Biology <br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['chemistry']==1) {
+                                                                        echo "Chemistry <br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['computers']==1) {
+                                                                        echo "Computers<br>";
+                                                                    }             
+                                                        if($_SESSION['userprof']['engineering']==1) {
+                                                                        echo "Engineering<br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['economics']==1) {
+                                                                        echo "Economics<br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['english']==1) {
+                                                                        echo "English <br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['history']==1) {
+                                                                        echo "History <br>";
+                                                                    } 
+
+                                                        if($_SESSION['userprof']['literature']==1) {
+                                                                        echo "Literature<br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['math']==1) {
+                                                                        echo "Math <br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['music']==1) {
+                                                                        echo "Music<br>";
+                                                                    } 
+                                                        if($_SESSION['userprof']['physics']==1) {
+                                                                        echo "Physics <br>";
+                                                                    } 
+                                                        
+                                                    
+                                                        
+                                                       
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+
+                                                                     
+                                                       ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 pack-service">
+                                                            <div class="service center">
+                                                                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Extracurriculars</h6>
+                                                                    <h6></h6>
+                                                                    <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra3']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra4']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra5']."<br>"; ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4 pack-service">
+                                                            <div class="service center">
+                                                                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                                                                <div class="service-detail">
+                                                                    <h6>Favorite Animals</h6>
+                                                                    <h6></h6>
+                                                                    <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra3']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra4']."<br>"; ?>
+                                                                    <?php echo $_SESSION['userprof']['extra5']."<br>"; ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
                                                          
 
                                                         
 
 
-                                                        <?php if($_SESSION['userprof']['math']==1) {
-                                                                        echo "Math";
-                                                                    } 
-
-                                                                     
-                                                        if($_SESSION['userprof']['english']==1) {
-                                                                        echo "English";
-                                                                    } 
-
-                                                                     
-                                                       ?>
+                                                        
                                                     </div> 
                                                 </div><!-- End Services -->
 
@@ -1351,13 +1438,7 @@
                                                 <div class="border-list"></div>
 
                                                 <div class="row" id="services">
-                                                    <div class="col-md-12">
-                                                        <div class="title_content">
-                                                            <div class="text_content">Interests</div>
-                                                            <div class="clear"></div>
-                                                        </div>
-
-                                                    </div>
+                                                   
                                                 </div>    
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -1372,14 +1453,38 @@
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapse_tabs">
-                                                                                Making Money
+                                                                                I'd value a mentor in...
                                                                                 <i class="glyphicon glyphicon-chevron-up" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseOne" class="panel-collapse collapse in">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                                           
+                                                                           <?php  if($_SESSION['userprof']['academics']==1) {
+                                                                        echo "Academics <br>";
+
+                                                                    }       
+                                                                    if($_SESSION['userprof']['applications']==1) {
+                                                                        echo "Applications <br>";
+                                                                    }
+                                                                    if($_SESSION['userprof']['careers']==1) {
+                                                                        echo "Careers <br>";
+                                                                    } 
+                                                                    if($_SESSION['userprof']['scholarship']==1) {
+                                                                        echo "Scholarships <br>";
+                                                                    } 
+                                                                     if($_SESSION['userprof']['sociallife']==1) {
+                                                                        echo "Social Life <br>";
+                                                                    } 
+                                                                    
+                                                                    
+                                                                    if($_SESSION['userprof']['transitioning']==1) {
+                                                                        echo "Transitioning to College <br>";
+                                                                    } 
+                                                                    
+
+                                                                    ?>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1387,14 +1492,14 @@
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                                Easy to Customize
+                                                                                What I'd like in a mentor...
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseTwo" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                                            <i class="fa fa-quote-left"></i> My Availabity
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1402,15 +1507,36 @@
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                Moving Let Us Help
+                                                                                My Availability
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseThree" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                                        </div>
+                                                                            <i class="fa fa-quote-left"></i>  
+                                                                            <?php
+                                                                                if ($i == 0) {
+                                                                                    echo "i equals 0";
+                                                                                } elseif ($i == 1) {
+                                                                                    echo "i equals 1";
+                                                                                } elseif ($i == 2) {
+                                                                                    echo "i equals 2";
+                                                                                }
+
+                                                                                switch ($i) {
+                                                                                    case 0:
+                                                                                        echo "i equals 0";
+                                                                                        break;
+                                                                                    case 1:
+                                                                                        echo "i equals 1";
+                                                                                        break;
+                                                                                    case 2:
+                                                                                        echo "i equals 2";
+                                                                                        break;
+                                                                                }
+                                                                                ?>
+                                                                           </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1425,7 +1551,7 @@
                                             <!-- .resume -->
                                             <div id="resume" class="content_2">
                                                 <!-- .title -->
-                                                <h1 class="h-bloc">Resume - Personal Info</h1> 
+                                                <h1 class="h-bloc">Find Mentors</h1> 
 
                                                 <div class="row">
 
@@ -1806,16 +1932,36 @@
                                                     <!-- /#filters -->
                                                 
                                                     <!-- #portfoliolist -->
+
+                                                      
+
                                                     <div id="portfoliolist">
-                                                    
-                                                    
-                                                          <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                     <ul class="mentor list">
+                                                      <?php
+
+    
+                                                        require_once("searchmentors.php");
+                                                        
+                                                        $mentors_3 = get_mentors_3();
+
+                                                        
                                                                 
-                                                                <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                //foreach($_SESSION['names3'] as $mentor) {
+
+                                                                    //echo $mentor['college'];
+                                                                    //echo "<br>";
+                                                                //}
+                                                            ?>
+                                                        </ul>
+
+
+                                                          <div class="view view-first portfolio logo" data-cat="logo">
+                                                            <img src="img/bear-farbe.svg" />
+                                                            <div class="mask">
+                                                                <h2><?php echo $_SESSION['names3'][0]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['user3'][0]['college']; ?></p>
+                                                                
+                                                                <a href="img/bear-farbe.svg" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
                                                                 </a>
                                                                 
@@ -1823,7 +1969,48 @@
                                                         </div> 
                                                         
                                                         <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src="http://placehold.it/220x165" />
+                                                            <img src=img/bear-farbe.svg />
+                                                            <div class="mask">
+                                                                <h2><?php echo $_SESSION['names3'][1]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['user3'][1]['college']; ?></p>
+                                                                
+                                                                <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="http://www.youtube.com/watch?v=c9MnSeYYtYY" rel="portfolio" class="info external"><i class="fa fa-play"></i></a> 
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
+                                                            <img src="img/bear-farbe.svg" />
+                                                            <div class="mask">
+                                                                <h2><?php echo $_SESSION['names3'][2]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['user3'][2]['college']; ?></p>
+                                                                
+                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="http://themeforest.net/item/flexyvcard-responsive-vcard-template-/7158750?WT.ac=solid_search_thumb&amp;WT.seg_1=solid_search_thumb&amp;WT.z_author=flexycodes?width=800&amp;height=500&amp;iframe=true" rel="portfolio" class="info external">
+                                                                <i class="fa fa-link"></i>
+                                                                </a> 
+                                                            </div>
+                                                        </div> 
+
+                                                        <div class="view view-first portfolio logo" data-cat="logo">
+                                                            <img src="img/bear-farbe.svg" />
+                                                            <div class="mask">
+                                                                <h2>Project Name</h2>
+                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                
+                                                                <a href="img/bear-farbe.svg" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
+                                                            <img src=img/bear-farbe.svg />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
                                                                 <p>A wonderful serenity has taken possession of my entire soul.</p>
@@ -1836,7 +2023,7 @@
                                                         </div> 
                                                         
                                                         <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src="http://placehold.it/220x165" />
+                                                            <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
                                                                 <p>A wonderful serenity has taken possession of my entire soul.</p>
@@ -1848,76 +2035,36 @@
                                                                 <i class="fa fa-link"></i>
                                                                 </a> 
                                                             </div>
-                                                        </div> 
-                                                        
-                                                        <div class="view view-first portfolio catMotion" data-cat="catMotion">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/?width=800&amp;height=500&amp;iframe=true" rel="portfolio"  class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
                                                         </div>
-                                                        
-                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://vimeo.com/7449107" rel="portfolio" class="info external"><i class="fa fa-play"></i></a> 
-                                                            </div>
-                                                        </div> 
-                                                        
-                                                        <div class="view view-first portfolio catMotion" data-cat="catMotion">
-                                                
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soulz.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="view view-first portfolio catGraphic" data-cat="catGraphic">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
+
                                                         <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="http://placehold.it/220x165" />
+                                                            <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
                                                                 <p>A wonderful serenity has taken possession of my entire soul.</p>
                                                                 
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                <a href="img/bear-farbe.svg" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
                                                                 </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
+                                                                
                                                             </div>
-                                                        </div>
+                                                        </div> 
                                                         
                                                         <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src="http://placehold.it/220x165" />
+                                                            <img src=img/bear-farbe.svg />
+                                                            <div class="mask">
+                                                                <h2>Project Name</h2>
+                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                
+                                                                <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="http://www.youtube.com/watch?v=c9MnSeYYtYY" rel="portfolio" class="info external"><i class="fa fa-play"></i></a> 
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
+                                                            <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
                                                                 <p>A wonderful serenity has taken possession of my entire soul.</p>
@@ -1925,12 +2072,39 @@
                                                                  <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
                                                                 </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
+                                                                <a href="http://themeforest.net/item/flexyvcard-responsive-vcard-template-/7158750?WT.ac=solid_search_thumb&amp;WT.seg_1=solid_search_thumb&amp;WT.z_author=flexycodes?width=800&amp;height=500&amp;iframe=true" rel="portfolio" class="info external">
+                                                                <i class="fa fa-link"></i>
+                                                                </a> 
                                                             </div>
                                                         </div>
+                                                        <div class="view view-first portfolio logo" data-cat="logo">
+                                                            <img src="img/bear-farbe.svg" />
+                                                            <div class="mask">
+                                                                <h2>Project Name</h2>
+                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                
+                                                                <a href="img/bear-farbe.svg" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div> 
                                                         
-                                                         <div class="view view-first portfolio catGraphic" data-cat="catGraphic">
-                                                            <img src="http://placehold.it/220x165" />
+                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
+                                                            <img src=img/bear-farbe.svg />
+                                                            <div class="mask">
+                                                                <h2>Project Name</h2>
+                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                
+                                                                <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="http://www.youtube.com/watch?v=c9MnSeYYtYY" rel="portfolio" class="info external"><i class="fa fa-play"></i></a> 
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
+                                                            <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
                                                                 <h2>Project Name</h2>
                                                                 <p>A wonderful serenity has taken possession of my entire soul.</p>
@@ -1938,74 +2112,12 @@
                                                                  <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
                                                                 </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
+                                                                <a href="http://themeforest.net/item/flexyvcard-responsive-vcard-template-/7158750?WT.ac=solid_search_thumb&amp;WT.seg_1=solid_search_thumb&amp;WT.z_author=flexycodes?width=800&amp;height=500&amp;iframe=true" rel="portfolio" class="info external">
+                                                                <i class="fa fa-link"></i>
+                                                                </a> 
                                                             </div>
                                                         </div>
                                                         
-                                                         <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
-                                                         <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" target="_blank" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
-                                                         <div class="view view-first portfolio catGraphic" data-cat="catGraphic">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
-                                                         <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes/portfolio" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
-                                                        
-                                                         <div class="view view-first portfolio catGraphic" data-cat="catGraphic">
-                                                            <img src="http://placehold.it/220x165" />
-                                                            <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/user/flexycodes" target="_blank" class="info external"><i class="fa fa-link"></i></a> 
-                                                            </div>
-                                                        </div>
                                                         
                                                     
                                                         <div class="clear"></div>

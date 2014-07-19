@@ -20,7 +20,9 @@
                 username, 
                 password, 
                 salt, 
-                email 
+                email,
+                mentor,
+                mentee 
             FROM userz
             WHERE 
                 username = :username 
@@ -149,7 +151,7 @@
                 { 
                     // Note: On a production website, you should not output $ex->getMessage(). 
                     // It may provide an attacker with helpful information about your code.  
-                    die("Failed to run query: " . $ex->getMessage()); 
+                    die("Failed to run profile query: " . $ex->getMessage()); 
                 } 
                  
                 // Retrieve the user data from the database.  If $row is false, then the username 
@@ -158,11 +160,52 @@
 
                 $_SESSION['userprof'] = $rowprof; 
 
+                if($_SESSION['user']['mentor']==1)
+                { 
+
+            $query_paramsor = array( 
+                ':id' => $_SESSION['user']['id']
+                ); 
+
+
+            $queryor = " 
+            SELECT  
+                college
+
+                FROM mentors
+                WHERE 
+                id = :id
+                "; 
+
+                try 
+                { 
+                    // Execute the query against the database 
+                    $stmtor = $db->prepare($queryor); 
+                    $resultor = $stmtor->execute($query_paramsor); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+                 
+                // Retrieve the user data from the database.  If $row is false, then the username 
+                // they entered is not registered. 
+                $rowor = $stmtor->fetch(); 
+
+                $_SESSION['useror'] = $rowor; 
+
+                
+
+            
+                } 
 
             // Redirect the user to the private members-only page. 
             header("Location: private.php"); 
             die("Redirecting to: private.php"); 
         } 
+
         else 
         { 
             // Tell the user they failed 
