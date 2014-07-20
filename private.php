@@ -217,7 +217,7 @@
                                             
                                             <li class="tabs-contact hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="contact" style="margin-bottom: 48px !important;"> 
                                                 <span class="tite-list">contact</span>
-                                                <i class="fa fa-envelope icon_menu"></i> 
+                                                 <i class="fa fa-tasks icon_menu"></i>
                                             </li>
 
                                             
