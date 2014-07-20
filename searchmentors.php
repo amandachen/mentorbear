@@ -99,7 +99,8 @@ function get_mentors_3() {
                 zipcode,
                 time,
                 available,
-                me
+                me,
+                photo
 
                 FROM profiles
                 WHERE 

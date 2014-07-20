@@ -933,8 +933,16 @@ h2.resp-accordion:hover {
     height: 456px; // change to desired height.
     background-position: center center;
     background-repeat: no-repeat;
+    border:3px solid #021a40;
 }​
 
+.center-cropped3 {
+    width: 150px;  // change to desired width.
+    height: 150px; // change to desired height.
+    background-position: center center;
+    background-repeat: no-repeat;
+    border:3px solid #021a40;
+}​
 
 #profile .cycle-slideshow {
     margin-top: 19px;

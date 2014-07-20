@@ -126,16 +126,17 @@
                                         <!-- Profile Image -->
                                         <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
 
-                                            <div class="image-holder one" id="pic_prof_1"  style="display:none">
+                                            
+                                            
+                                            <div class="image-holder one" id="pic_prof_1"  >
                                                 
-                                                <img class="head-image up circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
+                                                <img class="head-image up circle center-cropped3" style="background-image" src=<?php echo $_SESSION['userprof']['photo']; ?>  alt="" />
                                                
 
                                             </div>
 
                                             <!-- style for simple image profile -->     
-                                            <div class="circle-img" id="pic_prof_2"></div>
-
+                                           
                                         </div>
                                         <!-- End Profile Image -->
 
@@ -219,10 +220,7 @@
                                                 <i class="fa fa-envelope icon_menu"></i> 
                                             </li>
 
-                                            <li class="tabs-profile2 hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="profile2" style="margin-bottom: 48px !important;"> 
-                                                <span class="tite-list">contact</span>
-                                                <i class="fa fa-tasks icon_menu"></i> 
-                                            </li>
+                                            
 
                                             <a href="#" id="print"><i class="fa fa-print icon_print"></i> </a>
                                             <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
@@ -1310,10 +1308,7 @@
                                                         </p>
                                                         
                                                              <p style="margin-bottom:20px">
-                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
-                                                            <label>Change Profile Image</label><input type="string" name="image" />
-                                                            <input type="submit" />
-                                                            </form>
+                                                            
 
 
                                                         </p> 
@@ -1324,9 +1319,12 @@
                                                     <div  class="col-md-6 profile-r " >
 
                                                             
-                                                            <img class="center-cropped2" id='bigprofimg' style="background-image" src=<?php echo $_SESSION['userprof']['photo']; ?> alt="" />
+                                                            <img class="center-cropped2" id='profimg' style="background-image" src=<?php echo $_SESSION['userprof']['photo']; ?> alt="" />
                                                 
-
+                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
+                                                            <label></label><input type="string" name="image" placeholder="Change Image URL"/>
+                                                            <input type="submit" />
+                                                            </form>
                                                     </div>
 
                                                 </div>
@@ -1343,48 +1341,48 @@
                                                         
                                                          <div class="col-md-4 pack-service center">
                                                             <div class="service">
-                                                                <div class="service-icon"><i class="fa fa-tag"></i></div>
+                                                                <div class="service-icon"><i class="fa fa-book"></i></div>
                                                                 <div class="service-detail">
                                                                     <h6>Academics</h6>
                                                                     <h6></h6>
                                                                     <?php 
 
                                                         if($_SESSION['userprof']['art']==1) {
-                                                                        echo "Art <br>";
+                                                                        echo "<i class='fa fa-image'></i> Art<br>";
                                                         } 
                                                         if($_SESSION['userprof']['biology']==1) {
-                                                                        echo "Biology <br>";
+                                                                        echo "<i class='fa fa-leaf'></i> Biology<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['chemistry']==1) {
-                                                                        echo "Chemistry <br>";
+                                                                        echo "<i class='fa fa-flask'></i> Chemistry<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['computers']==1) {
-                                                                        echo "Computers<br>";
+                                                                        echo "<i class='fa fa-laptop' Computers></i><br>";
                                                                     }             
                                                         if($_SESSION['userprof']['engineering']==1) {
-                                                                        echo "Engineering<br>";
+                                                                        echo "<i class='fa fa-cogs'></i> Engineering<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['economics']==1) {
-                                                                        echo "Economics<br>";
+                                                                        echo "<i class='fa fa-dollar'></i> Economics <br>";
                                                                     } 
                                                         if($_SESSION['userprof']['english']==1) {
-                                                                        echo "English <br>";
+                                                                        echo "<i class='fa fa-pencil'></i> English<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['history']==1) {
-                                                                        echo "History <br>";
+                                                                        echo "<i class='fa fa-backward'></i> History<br>";
                                                                     } 
 
                                                         if($_SESSION['userprof']['literature']==1) {
-                                                                        echo "Literature<br>";
+                                                                        echo "<i class='fa fa-book'></i> Literature<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['math']==1) {
-                                                                        echo "Math <br>";
+                                                                        echo "<i class='fa fa-table'></i> Math<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['music']==1) {
-                                                                        echo "Music<br>";
+                                                                        echo "<i class='fa fa-music'></i> Music<br>";
                                                                     } 
                                                         if($_SESSION['userprof']['physics']==1) {
-                                                                        echo "Physics <br>";
+                                                                        echo "<i class='fa fa-bolt'></i> Physics<br>";
                                                                     } 
                                                         
                                                     
@@ -1418,7 +1416,7 @@
 
                                                         <div class="col-md-4 pack-service">
                                                             <div class="service center">
-                                                                <div class="service-icon"><i class="fa fa-star"></i></div>
+                                                                <div class="service-icon"><i class="fa fa-smile-o"></i></div>
                                                                 <div class="service-detail">
                                                                     <h6>Favorite Animals</h6>
                                                                     <h6></h6>
@@ -1967,7 +1965,7 @@
                                         
 
                                                           <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="img/bear-farbe.svg" />
+                                                            <img src=<?php echo $_SESSION['prof3'][0]['photo']; ?> />
                                                             <a href="mentor1.php"> <div class="mask" rel="portfolio" >
                                                                 <?php $i=0; 
                                                                 ?>
@@ -2010,8 +2008,8 @@
                                                         <div class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
-                                                                <h2>Project Name</h2>
-                                                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                                                <h2>More MentorBears</h2>
+                                                                <p>Coming Soon!</p>
                                                                 
                                                                 <a href="img/bear-farbe.svg" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
@@ -2246,333 +2244,17 @@
                                                 </div>
                                             </div>
 
-                                             <div id="profile" class="content_2">
-                                                <!-- .title -->
-                                                <h1 class="h-bloc">Profile - About Me</h1>
-
-                                                <div class="row top-p">
-                                                    <div class="col-md-6 profile-l">
-
-                                                        <!--About me-->
-                                                        <div class="title_content">
-                                                            <div class="text_content"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></div>
-                                                            <div class="clear"></div>
-                                                        </div>
-
-                                                        <ul class="about">
-
-                                                            <li>
-                                                                <i class="glyphicon glyphicon-user"></i>
-                                                                <label>Name</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></span>
-                                                                <div class="clear"></div>
-                                                            </li>
-
-                                                            <li>
-                                                                <i class="glyphicon glyphicon-book" ></i>
-                                                                <label>School</label>
-                                                                <span class="value"><?php if($_SESSION['userprof']['hschool']==1) {
-                                                                        echo "High School";
-                                                                    } else {
-                                                                        echo "College";
-                                                                    }
-
-                                                                     ?></span>
-                                                                <div class="clear"></div>
-                                                            </li>
-
-                                                            <li> 
-                                                                <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Zip Code</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
-                                                                <div class="clear"></div>
-                                                            </li>
-
-                                                            <li>
-                                                                <i class="glyphicon glyphicon-envelope"></i>
-                                                                <label>Email</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?></span>
-                                                                <div class="clear"></div>
-                                                            </li>
-
-                                                            <li>
-                                                                <i class="glyphicon glyphicon-phone"></i>
-                                                                <label>Gender</label>
-                                                                <span class="value"><?php if($_SESSION['userprof']['female']==1) {
-                                                                        echo "Female";
-                                                                    } else {
-                                                                        echo "Male";
-                                                                    }
-
-                                                                     ?></span>
-                                                                <div class="clear"></div>
-                                                            </li>
-
-                                                            <li>
-
-                                                                <?php if($_SESSION['user']['mentor']==1) {
-                                                                        ?> <i class="glyphicon glyphicon-globe"></i>
-                                                                <label>College</label>
-                                                                <span class="value"><?php echo $_SESSION['useror']['college'] ?></span>
-                                                                <div class="clear"></div>
-                                                                    <?php } 
-                                                    
-                                                                     ?>
-
-                                                                
-                                                            </li>
-
-                                                        </ul>
-
-
-                                                        <p style="margin-bottom:20px">
-                                                            
-                                                            
-                                                        </p>
-
-                                                        <p style="margin-bottom:20px">
-                                                            <i class="fa fa-quote-left"></i>       
-                                                           <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); ?>
-
-                                                        </p>
-
-                                                    </div>
-                                                    <!-- End left-wrap -->
-
-                                                    <div class="col-md-6 profile-r">
-
-                                                        <div class="cycle-slideshow">
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="clear"></div>
-
-
-                                                <div class="row" id="services">
-                                                    <div class="col-md-12">
-                                                        <div class="title_content">
-                                                            <div class="text_content">Interests</div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                        
-                                                         <div class="col-md-4 pack-service center">
-                                                            <div class="service">
-                                                                <div class="service-icon"><i class="fa fa-tag"></i></div>
-                                                                <div class="service-detail">
-                                                                    <h6>Academics</h6>
-                                                                    <h6></h6>
-                                                                    <?php 
-
-                                                        if($_SESSION['userprof']['art']==1) {
-                                                                        echo "Art <br>";
-                                                        } 
-                                                        if($_SESSION['userprof']['biology']==1) {
-                                                                        echo "Biology <br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['chemistry']==1) {
-                                                                        echo "Chemistry <br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['computers']==1) {
-                                                                        echo "Computers<br>";
-                                                                    }             
-                                                        if($_SESSION['userprof']['engineering']==1) {
-                                                                        echo "Engineering<br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['economics']==1) {
-                                                                        echo "Economics<br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['english']==1) {
-                                                                        echo "English <br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['history']==1) {
-                                                                        echo "History <br>";
-                                                                    } 
-
-                                                        if($_SESSION['userprof']['literature']==1) {
-                                                                        echo "Literature<br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['math']==1) {
-                                                                        echo "Math <br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['music']==1) {
-                                                                        echo "Music<br>";
-                                                                    } 
-                                                        if($_SESSION['userprof']['physics']==1) {
-                                                                        echo "Physics <br>";
-                                                                    } 
-                                                        
-                                                    
-                                                        
-                                                       
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-
-                                                                     
-                                                       ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 pack-service">
-                                                            <div class="service center">
-                                                                <div class="service-icon"><i class="fa fa-star"></i></div>
-                                                                <div class="service-detail">
-                                                                    <h6>Extracurriculars</h6>
-                                                                    <h6></h6>
-                                                                    <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra5']."<br>"; ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4 pack-service">
-                                                            <div class="service center">
-                                                                <div class="service-icon"><i class="fa fa-star"></i></div>
-                                                                <div class="service-detail">
-                                                                    <h6>Favorite Animals</h6>
-                                                                    <h6></h6>
-                                                                    <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra5']."<br>"; ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                             
                                                     
                                                          
 
                                                         
 
 
-                                                        
-                                                    </div> 
-                                                </div><!-- End Services -->
-
-
-                                                <div class="clear"></div>
-                                                <div class="border-list"></div>
-
-                                                <div class="row" id="services">
                                                    
-                                                </div>    
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="bottom-p">
-                                                            <div class="title_content">
-                                                                <div class="text_content">Mentoring Details</div>
-                                                                <div class="clear"></div>
-                                                            </div>
-
-                                                            <div class="panel-group" id="accordion">
-                                                                <div class="panel panel-default">
-                                                                    <div class="panel-heading">
-                                                                        <h4 class="panel-title">
-                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapse_tabs">
-                                                                                I'd value a mentor in...
-                                                                                <i class="glyphicon glyphicon-chevron-up" style="float: right;font-size: 13px;"></i>
-                                                                            </a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <div id="collapseOne" class="panel-collapse collapse in">
-                                                                        <div class="panel-body">
-                                                                           
-                                                                           <?php  if($_SESSION['userprof']['academics']==1) {
-                                                                        echo "Academics <br>";
-
-                                                                    }       
-                                                                    if($_SESSION['userprof']['applications']==1) {
-                                                                        echo "Applications <br>";
-                                                                    }
-                                                                    if($_SESSION['userprof']['careers']==1) {
-                                                                        echo "Careers <br>";
-                                                                    } 
-                                                                    if($_SESSION['userprof']['scholarship']==1) {
-                                                                        echo "Scholarships <br>";
-                                                                    } 
-                                                                     if($_SESSION['userprof']['sociallife']==1) {
-                                                                        echo "Social Life <br>";
-                                                                    } 
-                                                                    
-                                                                    
-                                                                    if($_SESSION['userprof']['transitioning']==1) {
-                                                                        echo "Transitioning to College <br>";
-                                                                    } 
-                                                                    
-
-                                                                    ?>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="panel panel-default">
-                                                                    <div class="panel-heading">
-                                                                        <h4 class="panel-title">
-                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                                What I'd like in a mentor...
-                                                                                <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
-                                                                            </a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <div id="collapseTwo" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i> My Availabity
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="panel panel-default">
-                                                                    <div class="panel-heading">
-                                                                        <h4 class="panel-title">
-                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                My Availability
-                                                                                <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
-                                                                            </a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <div id="collapseThree" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  
-                                                                            <?php
-                                                                                if ($i == 0) {
-                                                                                    echo "i equals 0";
-                                                                                } elseif ($i == 1) {
-                                                                                    echo "i equals 1";
-                                                                                } elseif ($i == 2) {
-                                                                                    echo "i equals 2";
-                                                                                }
-
-                                                                                switch ($i) {
-                                                                                    case 0:
-                                                                                        echo "i equals 0";
-                                                                                        break;
-                                                                                    case 1:
-                                                                                        echo "i equals 1";
-                                                                                        break;
-                                                                                    case 2:
-                                                                                        echo "i equals 2";
-                                                                                        break;
-                                                                                }
-                                                                                ?>
-                                                                           </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="clear"></div>
 
-                                            </div>
+                                            
                                             <!-- End .contact -->
 
                                         </div>
