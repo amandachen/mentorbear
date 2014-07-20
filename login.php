@@ -134,7 +134,8 @@
                 zipcode,
                 time,
                 available,
-                me
+                me,
+                photo
 
                 FROM profiles
                 WHERE 

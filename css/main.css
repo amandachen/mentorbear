@@ -63,6 +63,18 @@ body {
     background-image: url(../images/bg/bg5.png);
     padding: 0;
 }
+
+body {
+  height: 100%;
+  /*Image only BG fallback*/
+  background: url('http://i60.tinypic.com/2rmwi3c.png');
+  /*background = gradient + image pattern combo*/
+  background: 
+    linear-gradient(rgba(129, 207, 224, 0.2), rgba(89, 171, 227 0.2)), 
+    url('http://i60.tinypic.com/2rmwi3c.png');
+  font-family: montserrat, arial, verdana;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -915,9 +927,15 @@ h2.resp-accordion:hover {
     margin-right: 3px;
 }
 
-#profile .profile-r {
-    padding-right: 0;
-}
+
+.center-cropped2 {
+    width: 348px;  // change to desired width.
+    height: 456px; // change to desired height.
+    background-position: center center;
+    background-repeat: no-repeat;
+}​
+
+
 #profile .cycle-slideshow {
     margin-top: 19px;
     margin-bottom: 20px;

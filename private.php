@@ -127,16 +127,9 @@
                                         <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
 
                                             <div class="image-holder one" id="pic_prof_1"  style="display:none">
-
+                                                
                                                 <img class="head-image up circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image front circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
+                                               
 
                                             </div>
 
@@ -226,7 +219,7 @@
                                                 <i class="fa fa-envelope icon_menu"></i> 
                                             </li>
 
-                                            <li class="tabs-contact hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="profile2" style="margin-bottom: 48px !important;"> 
+                                            <li class="tabs-profile2 hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="profile2" style="margin-bottom: 48px !important;"> 
                                                 <span class="tite-list">contact</span>
                                                 <i class="fa fa-tasks icon_menu"></i> 
                                             </li>
@@ -1224,7 +1217,7 @@
                                                         </div>
 
                                             <!-- profile -->
-                                            <div id="profile" class="content_2">
+                                            <div id="profile2" class="content_2">
                                                 <!-- .title -->
                                                 <h1 class="h-bloc">Profile - About Me</h1>
 
@@ -1310,20 +1303,29 @@
 
                                                         <p style="margin-bottom:20px">
                                                             <i class="fa fa-quote-left"></i>       
-                                                           <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); ?>
+                                                           <?php echo htmlentities($_SESSION['userprof']['me'], ENT_QUOTES, 'UTF-8'); 
+                                                       
+                                                           ?>
 
                                                         </p>
+                                                        
+                                                             <p style="margin-bottom:20px">
+                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
+                                                            <label>Change Profile Image</label><input type="string" name="image" />
+                                                            <input type="submit" />
+                                                            </form>
+
+
+                                                        </p> 
 
                                                     </div>
                                                     <!-- End left-wrap -->
 
-                                                    <div class="col-md-6 profile-r">
+                                                    <div  class="col-md-6 profile-r " >
 
-                                                        <div class="cycle-slideshow">
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                        </div>
+                                                            
+                                                            <img class="center-cropped2" id='bigprofimg' style="background-image" src=<?php echo $_SESSION['userprof']['photo']; ?> alt="" />
+                                                
 
                                                     </div>
 
@@ -1961,22 +1963,27 @@
                                                         
                                                 
 
-
+                                                       
+                                        
 
                                                           <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
-                                                            <div class="mask" rel="portfolio" >
-                                                                <h2><?php echo $_SESSION['names3'][0]['username']; ?></h2>
-                                                                <p><?php echo $_SESSION['user3'][0]['college']; ?></p>
-
-                                                            </div>
+                                                            <a href="mentor1.php"> <div class="mask" rel="portfolio" >
+                                                                <?php $i=0; 
+                                                                ?>
+                                                                <h2><?php echo $_SESSION['names3'][$i]['username']; ?></h2>
+                                                                <p><?php  echo $_SESSION['id3'][$i]['college']; ?></p>
+                                                            </div></a>
+                                                            
                                                         </div> 
-                                                        
+
+                                                            
+
                                                         <div class="view view-first portfolio catWeb" data-cat="catWeb">
                                                             <img src=img/bear-farbe.svg />
                                                             <div class="mask">
                                                                 <h2><?php echo $_SESSION['names3'][1]['username']; ?></h2>
-                                                                <p><?php echo $_SESSION['user3'][1]['college']; ?></p>
+                                                                <p><?php echo  $_SESSION['id3'][1]['college']; ?></p>
                                                                 
                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
@@ -1989,7 +1996,7 @@
                                                             <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
                                                                 <h2><?php echo $_SESSION['names3'][2]['username']; ?></h2>
-                                                                <p><?php echo $_SESSION['user3'][2]['college']; ?></p>
+                                                                <p><?php echo $_SESSION['id3'][2]['college']; ?></p>
                                                                 
                                                                  <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
                                                                     <i class="fa fa-search"></i>
@@ -2602,7 +2609,7 @@
         <!-- Js | jquery.cycle -->
         <!-- Credits: https://github.com/malsup/cycle2 -->
         <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
-
+        <script type="text/javascript" src="js/easyResponsiveTabs2.js"></script>
         <!-- jquery | rotate and portfolio -->
         <!-- Credits: http://jquery.com -->
         <script type="text/javascript" src="js/jquery.mixitup.min.js"></script> 

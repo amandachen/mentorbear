@@ -16,7 +16,7 @@ function get_mentors_3() {
     }
 
     $mentor3 = $results->fetchALL(PDO::FETCH_ASSOC);
-    $_SESSION['user3']=$mentor3;
+    $_SESSION['id3']=$mentor3;
     $paramsfind3 = array( 
             ':id' => $mentor3[0]['id'],
             ':id1'=> $mentor3[1]['id'],
@@ -27,7 +27,7 @@ function get_mentors_3() {
             
     $queryfind3 = " 
         SELECT  
-        username
+        username, email, mentor
         FROM userz
         WHERE 
         id IN (:id, :id1, :id2)
