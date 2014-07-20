@@ -190,17 +190,51 @@
                     // It may provide an attacker with helpful information about your code.  
                     die("Failed to run mentor query: " . $ex->getMessage()); 
                 } 
-                 
-                // Retrieve the user data from the database.  If $row is false, then the username 
-                // they entered is not registered. 
+            
                 $rowor = $stmtor->fetch(); 
 
                 $_SESSION['useror'] = $rowor; 
+            }
 
+                else {
+                    $query_params = array( 
+                    ':id' => $_SESSION['user']['id']
+                ); 
+
+
+                $query = " 
+                SELECT  
+                mentorid1, mentorid2, mentorid3
+                FROM mentees
+                WHERE 
+                id = :id
+                "; 
+
+                try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+                $_SESSION['mentorids'] = $stmt->fetch(PDO::FETCH_NUM); 
+
+                }
+
+
+                 
+                // Retrieve the user data from the database.  If $row is false, then the username 
+                // they entered is not registered. 
+                
                 
 
             
-                } 
+                
 
             // Redirect the user to the private members-only page. 
             header("Location: private.php"); 

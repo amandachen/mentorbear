@@ -221,6 +221,8 @@
             die("Failed to run query: " . $ex->getMessage()); 
         } 
          
+
+         
         // This redirects the user back to the login page after they register 
         header("Location: login.php"); 
          

@@ -22,7 +22,7 @@
         die("Redirecting to login.php"); 
     } 
 
-$z=0;
+$z=1;
     
            
 $paramview = array( 
@@ -272,7 +272,7 @@ $queryviews = "
 
                                           
                                             <a href="private.php" id="print"><i class="fa fa-arrow-left icon_print"></i> </a>
-                                            <a href="javascript:window.print()" id="downlowd"><i class="fa fa-print icon_print"></i> </a>
+                                            <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
 
                                         </ul>
                                         <!-- /resp-tabs-list -->

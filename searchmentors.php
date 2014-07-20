@@ -1,12 +1,13 @@
 <?php
+// $_SESSION['id3'] contains id college major [0][1][2]
 
 function get_mentors_3() {
     require("common.php");
-
     try {
         $results= $db->query("
-            SELECT id, college
+            SELECT id, college, major
             FROM mentors
+            ORDER BY RAND()
             LIMIT 3");
 
     } catch (Exception $e) {
@@ -14,30 +15,32 @@ function get_mentors_3() {
         echo "de";
         exit;
     }
+    $mentor3fixed = $results->fetchALL(PDO::FETCH_NUM);
 
-    $mentor3 = $results->fetchALL(PDO::FETCH_ASSOC);
-    $_SESSION['id3']=$mentor3;
+    usort($mentor3fixed, function($a, $b) {
+    return $a[0] - $b[0];
+    });
+
+    
+
+    $_SESSION['id3']=$mentor3fixed;
+
     $paramsfind3 = array( 
-            ':id' => $mentor3[0]['id'],
-            ':id1'=> $mentor3[1]['id'],
-            ':id2'=> $mentor3[2]['id']
+            ':id' => $mentor3fixed[0][0],
+            ':id1'=> $mentor3fixed[1][0],
+            ':id2'=> $mentor3fixed[2][0]
               ); 
-
-
-            
+           
     $queryfind3 = " 
         SELECT  
-        username, email, mentor
+        username, email
         FROM userz
         WHERE 
         id IN (:id, :id1, :id2)
         "; 
 
-
-
         try 
         { 
-            // Execute the query against the database 
             $stmtfind3 = $db->prepare($queryfind3); 
             $resultfind3 = $stmtfind3->execute($paramsfind3); 
         } 
@@ -54,9 +57,9 @@ function get_mentors_3() {
         $_SESSION['names3'] = $names3; 
 
          $paramsprof3 = array( 
-            ':id' => $mentor3[0]['id'],
-            ':id1'=> $mentor3[1]['id'],
-            ':id2'=> $mentor3[2]['id']
+            ':id' => $mentor3fixed[0][0],
+            ':id1'=> $mentor3fixed[1][0],
+            ':id2'=> $mentor3fixed[2][0]
               ); 
 
 
@@ -127,8 +130,11 @@ function get_mentors_3() {
 
         $_SESSION['prof3'] = $prof3; 
 
+     
+
                
 }
+
 
 ?>
 

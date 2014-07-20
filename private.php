@@ -161,7 +161,7 @@
                                             <!-- Profile Description -->
                                             <div id="profile_desc">
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac risus nibh. Donec adipiscing luctus tur
+                                                
                                                 </p>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing eli
@@ -1943,67 +1943,55 @@
 
                                                     <div id="portfoliolist">
                                                      
+
                                                       <?php
 
     
-                                                        require_once("searchmentors.php");
+                                                        require("searchmentors.php");
                                                         
-                                                        $mentors_3 = get_mentors_3();
+                                                        get_mentors_3();
 
-                                                        
-                                                                
-                                                                //foreach($_SESSION['names3'] as $mentor) {
 
-                                                                    //echo $mentor['college'];
-                                                                    //echo "<br>";
-                                                                //}
+                                                           
                                                             ?>
-                                                        
-                                                
-
-                                                       
-                                        
-
+                                                    
                                                           <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php echo $_SESSION['prof3'][0]['photo']; ?> />
+                                                            <img src=<?php 
+                                                            echo $_SESSION['prof3'][0]['photo']; ?> />
                                                             <a href="mentor1.php"> <div class="mask" rel="portfolio" >
-                                                                <?php $i=0; 
-                                                                ?>
-                                                                <h2><?php echo $_SESSION['names3'][$i]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['id3'][$i]['college']; ?></p>
+                                                               
+                                                                <h2><?php echo $_SESSION['names3'][0]['username']; ?></h2>
+                                                                <p><?php  echo $_SESSION['id3'][0][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['id3'][0][2]; ?></p>
                                                             </div></a>
-                                                            
-                                                        </div> 
+                                                            </div> 
 
                                                             
 
-                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src=img/bear-farbe.svg />
-                                                            <div class="mask">
+                                                        <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
+                                                            <img src=<?php 
+                                                             echo $_SESSION['prof3'][1]['photo']; ?> />
+                                                            <a href="mentor2.php"> <div class="mask" rel="portfolio" >
+                                                               
                                                                 <h2><?php echo $_SESSION['names3'][1]['username']; ?></h2>
-                                                                <p><?php echo  $_SESSION['id3'][1]['college']; ?></p>
-                                                                
-                                                                <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://www.youtube.com/watch?v=c9MnSeYYtYY" rel="portfolio" class="info external"><i class="fa fa-play"></i></a> 
-                                                            </div>
-                                                        </div> 
-                                                        
-                                                        <div class="view view-first portfolio catWeb" data-cat="catWeb">
-                                                            <img src="img/bear-farbe.svg" />
-                                                            <div class="mask">
+                                                                <p><?php  echo $_SESSION['id3'][1][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['id3'][1][2]; ?></p>
+                                                            </div></a>
+                                                            </div> 
+
+
+                                                             <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
+                                                            <img src=<?php 
+                                                             echo $_SESSION['prof3'][2]['photo']; ?> />
+                                                            <a href="mentor3.php"> <div class="mask" rel="portfolio" >
+                                                               
                                                                 <h2><?php echo $_SESSION['names3'][2]['username']; ?></h2>
-                                                                <p><?php echo $_SESSION['id3'][2]['college']; ?></p>
-                                                                
-                                                                 <a href="http://placehold.it/600x849" rel="portfolio" class="info open-imag">
-                                                                    <i class="fa fa-search"></i>
-                                                                </a>
-                                                                <a href="http://themeforest.net/item/flexyvcard-responsive-vcard-template-/7158750?WT.ac=solid_search_thumb&amp;WT.seg_1=solid_search_thumb&amp;WT.z_author=flexycodes?width=800&amp;height=500&amp;iframe=true" rel="portfolio" class="info external">
-                                                                <i class="fa fa-link"></i>
-                                                                </a> 
-                                                            </div>
-                                                        </div> 
+                                                                <p><?php  echo $_SESSION['id3'][2][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['id3'][2][2]; ?></p>
+                                                            </div></a>
+                                                            </div> 
+                                                            
+                                                        
 
                                                         <div class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
