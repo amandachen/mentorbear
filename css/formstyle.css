@@ -99,7 +99,7 @@ body {
 	color: black;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 16.66%;
+	width: 10%;
 	float: left;
 	position: relative;
 }
@@ -236,6 +236,8 @@ input[type=radio] {
 	opacity: 1;
 }
 
+/* Gender */
+
 #square1 label:after{
 	content: 'Female';
 
@@ -245,6 +247,8 @@ input[type=radio] {
 	content: 'Male';
 
 }
+
+/* Year in school */
 
 #square3 label:after{
 	content: 'High School';
@@ -256,6 +260,8 @@ input[type=radio] {
 
 }
 
+/* Mentee or Mentor */
+
 #square5 label:after{
 	content: 'Mentee';
 
@@ -264,6 +270,8 @@ input[type=radio] {
 #square6 label:after{
 	content: 'Mentor';
 }
+
+/* Favorite subjects */
 
 #math label:after{
 	content: 'Math';
@@ -299,11 +307,117 @@ input[type=radio] {
 	content: 'History';
 
 }
+
 #economics label:after{
 	content: 'Economics';
 
 }
-#biology label:after{
-	content: 'Biology';
 
+#literature label:after{
+	content: 'Literature';
+}
+
+/* Gender preference */
+
+#femaleonly label:after{
+	content: 'Female only';
+}
+
+#maleonly label:after{
+	content: 'Male only';
+}
+#dontmind label:after{
+	content: 'I dont mind';
+}
+
+/* Preferred means of communication */
+
+#inperson label:after{
+	content: 'In-Person';
+}
+
+#email label:after{
+	content: 'E-mail';
+}
+
+#vchat label:after{
+	content: 'Video Chat';
+}
+
+#im label:after{
+	content: 'Instant Message';
+}
+
+#phone label:after{
+	content: 'Phone';
+}
+
+#other label:after{
+	content: 'Other';
+}
+
+/* Want to be mentored in */
+
+#academics label:after{
+	content: 'Academics';
+}
+
+#careers label:after{
+	content: 'Careers';
+}
+
+#sociallife label:after{
+	content: 'Social Life';
+}
+
+#applications label:after{
+	content: 'Applications';
+}
+
+#scholarships label:after{
+	content: 'Scholarships';
+}
+
+#transitioning label:after{
+	content: 'Transitioning to College';
+}
+
+/* Time per week */
+
+#time1 label:after{
+	content: '15-30 minutes';
+}
+
+#time2 label:after{
+	content: '30-45 minutes';
+}
+
+#time3 label:after{
+	content: '45-60 minutes';
+}
+
+#time4 label:after{
+	content: '1-1.5 hours';
+}
+
+#time5 label:after{
+	content: '1.5-3 hours';
+}
+
+#time6 label:after{
+	content: '3+ hours';
+}
+
+/* Availability */
+
+#weekdays label:after{
+	content: 'Weekdays';
+}
+
+#saturdays label:after{
+	content: 'Saturdays';
+}
+
+#sundays label:after{
+	content: 'Sundays';
 }
