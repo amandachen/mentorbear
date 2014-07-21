@@ -22,7 +22,7 @@
         die("Redirecting to login.php"); 
     } 
 
-$z=1;
+$z=2;
     
            
 $paramview = array( 
