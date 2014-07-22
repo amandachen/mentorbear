@@ -264,71 +264,7 @@
 
             ";
 
-        $query = "
-
-            INSERT INTO profiles (
-                female,
-                hschool,
-                mentor,
-                math,
-                english,
-                art,
-                physics,
-                biology,
-                history,
-                chemistry,
-                economics,
-                literature,
-                genderpref,
-                inperson,
-                email2,
-                vchat,
-                im,
-                phone,
-                other,
-                academics,
-                careers,
-                sociallife,
-                applications,
-                scholarships,
-                transitioning,
-                time,
-                weekdays,
-                saturdays,
-                sundays
-            ) VALUES (
-                :female,
-                :hschool,
-                :mentor,
-                :math,
-                :english,
-                :art,
-                :physics,
-                :biology,
-                :history,
-                :chemistry,
-                :economics,
-                :literature,
-                :genderpref,
-                :inperson,
-                :email2,
-                :vchat,
-                :im,
-                :phone,
-                :other,
-                :academics,
-                :careers,
-                :sociallife,
-                :applications,
-                :scholarships,
-                :transitioning,
-                :time,
-                :weekdays,
-                :saturdays,
-                :sundays
-            )
         
-            ";
 
         // A salt is randomly generated here to protect again brute force attacks 
         // and rainbow table attacks.  The following statement generates a hex 
@@ -369,7 +305,107 @@
 
             );
 
-        $query_params = array( 
+       
+         
+         
+
+        try 
+        { 
+            // Execute the query to create the user 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex) 
+        { 
+            // Note: On a production website, you should not output $ex->getMessage(). 
+            // It may provide an attacker with helpful information about your code.  
+            die("Failed to run query: " . $ex->getMessage()); 
+        } 
+         
+$query = "
+
+            INSERT INTO profiles (
+                female,
+                hschool,
+                mentor,
+                math,
+                english,
+                art,
+                physics,
+                biology,
+                history,
+                chemistry,
+                economics,
+                literature,
+                genderpref,
+                inperson,
+                email2,
+                vchat,
+                im,
+                phone,
+                other,
+                academics,
+                careers,
+                sociallife,
+                applications,
+                scholarships,
+                transitioning,
+                time,
+                weekdays,
+                saturdays,
+                sundays,
+                extra1,
+                extra2,
+                extra3,
+                extra4,
+                extra5,
+                url,
+                state,
+                me
+            ) VALUES (
+                :female,
+                :hschool,
+                :mentor,
+                :math,
+                :english,
+                :art,
+                :physics,
+                :biology,
+                :history,
+                :chemistry,
+                :economics,
+                :literature,
+                :genderpref,
+                :inperson,
+                :email2,
+                :vchat,
+                :im,
+                :phone,
+                :other,
+                :academics,
+                :careers,
+                :sociallife,
+                :applications,
+                :scholarships,
+                :transitioning,
+                :time,
+                :weekdays,
+                :saturdays,
+                :sundays,
+                :extra1,
+                :extra2,
+                :extra3,
+                :extra4,
+                :extra5,
+                :url,
+                :state,
+                :me
+
+            )
+        
+            ";
+
+             $query_params = array( 
 
             ':female' => $_POST['female'],
             ':hschool' => $_POST['hschool'],
@@ -400,11 +436,17 @@
             ':weekdays' => $_POST['weekdays'],
             ':saturdays' => $_POST['saturdays'],
             ':sundays' => $_POST['sundays'],   
+            ':extra1' => $_POST['extra1'],
+            ':extra2' => $_POST['extra2'],
+            ':extra3' => $_POST['extra3'],
+            ':extra4' => $_POST['extra4'],
+            ':extra5' => $_POST['extra5'],
+            ':url' => 0,
+            ':state' => $_POST['state'],
+            ':me' => $_POST['me'],    
         ); 
-         
-         
 
-        try 
+try 
         { 
             // Execute the query to create the user 
             $stmt = $db->prepare($query); 
@@ -417,8 +459,113 @@
             die("Failed to run query: " . $ex->getMessage()); 
         } 
          
+ 
 
-         
+    $query_params = array( 
+
+            ':email' => $_POST['email']
+
+            );
+
+    $query = " 
+            SELECT  
+                id
+
+                FROM userz
+                WHERE 
+                email = :email
+                "; 
+
+                try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+            
+                $id = $stmt->fetch(PDO::FETCH_NUM); 
+
+                $_SESSION['id'] = $id[0];
+
+
+
+            if($_SESSION['user']['mentor']==1)
+
+                { 
+
+            $query= "
+
+                INSERT INTO mentors (id,college,major)
+                VALUES (
+                    :id,
+                    :college,
+                    :major
+
+                    )";
+
+            $query_params = array( 
+
+            ':id' => $id[0],
+            ':college' => $_POST['college'],
+            ':major' => $_POST['major'],
+
+            );
+
+            try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+
+                }
+
+                else {
+
+            $query= "
+
+                    INSERT INTO mentees (id,mentorid1,mentorid2,mentorid3)
+                    VALUES (
+                    :id,
+                    0,
+                    0,
+                    0
+
+                    )";
+
+            $query_params = array( 
+
+            ':id' => $id[0]
+
+            );
+
+            try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+
+                    }
+
         // This redirects the user back to the login page after they register 
         header("Location: login.php"); 
          
@@ -426,8 +573,9 @@
         // is critical.  The rest of your PHP script will continue to execute and 
         // will be sent to the user if you do not die or exit. 
         die("Redirecting to login.php"); 
-    } 
-    
+     
+}
+
 ?> 
 
 
@@ -720,9 +868,9 @@
         <h2 class="fs-title">Profile</h2>
         <h3 class="fs-subtitle">You're almost done!</h3>
 
-        <textarea name="bio" id="bio" placeholder="Write a few sentences about yourself for your profile."></textarea>
+        <textarea name="me" id="bio" placeholder="Write a few sentences about yourself for your profile."></textarea>
 
-        <input type="text" name="city" id="city" placeholder="What city do you live in?" />
+        <input type="text" name="state" id="city" placeholder="What state do you live in?" />
 
         <input type="button" name="previous" class="previous action-button" value="Previous" />
 
