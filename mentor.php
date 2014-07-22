@@ -231,6 +231,8 @@
 
                                             
 
+                                            <a href="#" id="print"><i class="fa fa-print icon_print"></i> </a>
+                                            <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
 
                                         </ul>
                                         <!-- /resp-tabs-list -->
@@ -317,19 +319,19 @@
                                                                                     <div class="top_c ">
 
                                                                                         <div class="title_content">
-                                                                                            <div class="text_content"><a href="#post-1" class="read_more">MentorBear Updates</a></div>
+                                                                                            <div class="text_content"><a href="#post-1" class="read_more">Blog Post Gallery</a></div>
                                                                                             <div class="clear"></div>
                                                                                         </div>
 
                                                                                         <ul class="info">
                                                                                             <li><i class="glyphicon glyphicon-comment"></i> 2 Comments</li>
-                                                                                            <li><i class="glyphicon glyphicon-time"></i> July 21, 2014</li>
-                                                                                            <li><i class="glyphicon glyphicon-user"></i> by Adrian Black</li>
-                                                                                            
+                                                                                            <li><i class="glyphicon glyphicon-time"></i> January 31, 2014</li>
+                                                                                            <li><i class="glyphicon glyphicon-user"></i> by Jane Doe</li>
+                                                                                            <li><i class="glyphicon glyphicon-tag"></i> jquery, slider, web design</li>
                                                                                         </ul>
 
                                                                                         <div class="blog-content">
-                                                                                            <p><i class="fa fa-quote-left"></i> The MentorBear Team is delighted to launch our awesome online platform. </p></div>
+                                                                                            <p><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo...</p></div>
                                                                                     </div>
                                                                                 </div>  
 
@@ -1421,7 +1423,7 @@
                                                             <div class="service center">
                                                                 <div class="service-icon"><i class="fa fa-smile-o"></i></div>
                                                                 <div class="service-detail">
-                                                                    <h6>Favorite Animal</h6>
+                                                                    <h6>Favorite Animals</h6>
                                                                     <h6></h6>
                                                                     <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
                                                                     <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
@@ -1496,7 +1498,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                 <div class="panel panel-default">
+                                                                <div class="panel panel-default">
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">

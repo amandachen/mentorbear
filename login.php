@@ -21,8 +21,7 @@
                 password, 
                 salt, 
                 email,
-                mentor,
-                mentee 
+                mentor
             FROM userz
             WHERE 
                 username = :username 

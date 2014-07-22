@@ -498,7 +498,7 @@ if($_SESSION['mentormax']) {
                                                             <div class="service center">
                                                                 <div class="service-icon"><i class="fa fa-star"></i></div>
                                                                 <div class="service-detail">
-                                                                    <h6>Favorite Animals</h6>
+                                                                    <h6>Favorite Animal</h6>
                                                                     <h6></h6>
                                                                     <?php echo $_SESSION['prof3'][$z]['extra1']."<br>"; ?>
                                                                     <?php echo $_SESSION['prof3'][$z]['extra2']."<br>"; ?>
@@ -578,6 +578,21 @@ if($_SESSION['mentormax']) {
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
                                                                                 What I'd like in a mentor...
+                                                                                <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
+                                                                            </a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <i class="fa fa-quote-left"></i> My Availabity
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
+                                                                                My Availability
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
