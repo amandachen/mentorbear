@@ -75,12 +75,12 @@ function get_mentors_3() {
                 history,
                 chemistry,
                 economics,
-                engineering,
+                
                 physics,
-                computers,
+                
                 biology,
                 art,
-                music,
+                
                 literature,
                 extra1,
                 extra2,
@@ -88,22 +88,24 @@ function get_mentors_3() {
                 extra4,
                 extra5,
                 academics,
-                career,
+                careers,
                 sociallife,
                 applications,
-                scholarship,
+                scholarships,
                 transitioning,
-                email,
+                email2,
                 inperson,
                 vchat,
                 phone,
                 im,
                 other,
-                zipcode,
-                time,
-                available,
+                state,
+                weekdays,
+                saturdays,
+                sundays,
                 me,
                 photo
+
 
                 FROM profiles
                 WHERE 
@@ -150,12 +152,12 @@ function savedmentors() {
                 history,
                 chemistry,
                 economics,
-                engineering,
+                
                 physics,
-                computers,
+                
                 biology,
                 art,
-                music,
+                
                 literature,
                 extra1,
                 extra2,
@@ -163,22 +165,24 @@ function savedmentors() {
                 extra4,
                 extra5,
                 academics,
-                career,
+                careers,
                 sociallife,
                 applications,
-                scholarship,
+                scholarships,
                 transitioning,
-                email,
+                email2,
                 inperson,
                 vchat,
                 phone,
                 im,
                 other,
-                zipcode,
-                time,
-                available,
+                state,
+                weekdays,
+                saturdays,
+                sundays,
                 me,
                 photo
+
 
                 FROM profiles
                 WHERE 
@@ -352,12 +356,12 @@ function get_mentees() {
                 history,
                 chemistry,
                 economics,
-                engineering,
+                
                 physics,
-                computers,
+                
                 biology,
                 art,
-                music,
+                
                 literature,
                 extra1,
                 extra2,
@@ -365,25 +369,25 @@ function get_mentees() {
                 extra4,
                 extra5,
                 academics,
-                career,
+                careers,
                 sociallife,
                 applications,
-                scholarship,
+                scholarships,
                 transitioning,
-                email,
+                email2,
                 inperson,
                 vchat,
                 phone,
                 im,
                 other,
                 state,
-                time,
-                
                 weekdays,
                 saturdays,
                 sundays,
                 me,
                 photo
+
+                
 
                 FROM profiles
                 WHERE 

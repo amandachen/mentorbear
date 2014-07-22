@@ -1422,7 +1422,7 @@
                                                                     <p>Brown Bear</p>
                                                                     <p>Black Bear</p>
                                                                     <p>Polar Bear</p>
-                                                                    <p>Grizzly Bear</p>
+                                                                    <p>Grizzly</p>
                                                                     
                                                                 </div>
                                                             </div>

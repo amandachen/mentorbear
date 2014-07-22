@@ -322,9 +322,10 @@ $query = "
                 extra3,
                 extra4,
                 extra5,
-                url,
+                photo,
                 state,
                 me
+
             ) VALUES (
                 :female,
                 :hschool,
@@ -404,7 +405,7 @@ $query = "
             ':extra3' => $_POST['extra3'],
             ':extra4' => $_POST['extra4'],
             ':extra5' => $_POST['extra5'],
-            ':url' => 'http://placehold.it/348x456',
+            ':photo' => 'http://placehold.it/348x456',
             ':state' => $_POST['state'],
             ':me' => $_POST['me'],    
         ); 
@@ -527,6 +528,35 @@ try
                     die("Failed to run mentor query: " . $ex->getMessage()); 
                 } 
 
+                 $query= "
+
+                    INSERT INTO views (id,vcount)
+                    VALUES (
+                    :id,
+                    0
+                    
+
+                    )";
+
+            $query_params = array( 
+
+            ':id' => $id[0]
+
+            );
+
+            try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+
                     }
 
         // This redirects the user back to the login page after they register 
@@ -599,11 +629,11 @@ try
 
         <h3 class="fs-subtitle"> Year in School</h3>
                 <div class="squaredOne" id="square3">
-             <input type="radio" value="h" id="squaredOne3" name="hschool"/>
+             <input type="radio" value="1" id="squaredOne3" name="hschool"/>
             <label for="squaredOne3">High School</label>
         </div>
         <div class="squaredOne" id="square4">
-             <input type="radio" value="c" id="squaredOne4" name="hschool"/>
+             <input type="radio" value="0" id="squaredOne4" name="hschool"/>
             <label for="squaredOne4">College</label>
         </div>
 
@@ -742,27 +772,27 @@ try
         <h2 class="fs-title">In which areas would you most value a mentor?</h2>
         <h3 class="fs-subtitle">Choose as many as you'd like</h3>
        <div class="squaredOne" id="Academics">
-             <input type="checkbox" value="academics" id="academics1" name="academics" />
+             <input type="checkbox" value="1" id="academics1" name="academics" />
             <label for="academics1">Academics</label>
         </div>
         <div class="squaredOne" id="Careers">
-             <input type="checkbox" value="careers" id="careers1" name="careers"/>
+             <input type="checkbox" value="1" id="careers1" name="careers"/>
             <label for="careers1">Careers</label>
         </div>
         <div class="squaredOne" id="sociallife">
-             <input type="checkbox" value="sociallife" id="sociallife1" name="sociallife"/>
+             <input type="checkbox" value="1" id="sociallife1" name="sociallife"/>
             <label for="sociallife1">Social Life</label>
         </div>
         <div class="squaredOne" id="applications">
-             <input type="checkbox" value="applications" id="applications1" name="applications"/>
+             <input type="checkbox" value="1" id="applications1" name="applications"/>
             <label for="applications1">Applications</label>
         </div>
          <div class="squaredOne" id="scholarships">
-             <input type="checkbox" value="scholarships" id="scholarships1" name="scholarships"/>
+             <input type="checkbox" value="1" id="scholarships1" name="scholarships"/>
             <label for="scholarships1">Scholarships</label>
         </div>
         <div class="squaredOne" id="transitioning">
-             <input type="checkbox" value="transitioning" id="transitioning1" name="transitioning"/>
+             <input type="checkbox" value="1" id="transitioning1" name="transitioning"/>
              <label for="transitioning1">Transitioning to College</label>
         </div>
          <input type="button" name="previous" class="previous action-button" value="Previous" />
