@@ -193,6 +193,9 @@
                 $rowor = $stmtor->fetch(); 
 
                 $_SESSION['useror'] = $rowor; 
+
+                header("Location: mentor.php"); 
+            die("Redirecting to: mentor.php"); 
             }
 
                 else {

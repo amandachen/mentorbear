@@ -181,14 +181,10 @@
 
                                             <!-- Name -->
                                             <div id="profile_social">
-                                                <h6>My Social Profiles</h6>
-                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                <a href="#"><i class="fa fa fa-dribbble"></i></a>
-                                                <a href="#"><i class="fa fa-foursquare"></i></a>
+                                                <h6></h6>
+                                                    <h6>Chat Coming Soon</h6>
                                                 <div class="clear"></div>
-                                            </div>
+                                            </div> 
                                             <!-- End Name -->  
 
                                         </div>
@@ -218,21 +214,8 @@
                                                 <i class="fa fa-briefcase icon_menu"></i>
                                             </li>
 
-                                            <li class="tabs-portfolio hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="portfolio"> 
-                                                <span class="tite-list">portfolio</span>
-                                                <i class="fa fa-tasks icon_menu"></i>
-                                            </li>
-
-                                            
-                                            <li class="tabs-contact hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="contact" style="margin-bottom: 48px !important;"> 
-                                                <span class="tite-list">contact</span>
-                                                 <i class="fa fa-tasks icon_menu"></i>
-                                            </li>
-
                                             
 
-                                            <a href="#" id="print"><i class="fa fa-print icon_print"></i> </a>
-                                            <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
 
                                         </ul>
                                         <!-- /resp-tabs-list -->
@@ -319,19 +302,19 @@
                                                                                     <div class="top_c ">
 
                                                                                         <div class="title_content">
-                                                                                            <div class="text_content"><a href="#post-1" class="read_more">Blog Post Gallery</a></div>
+                                                                                            <div class="text_content"><a href="#post-1" class="read_more">MentorBear Updates</a></div>
                                                                                             <div class="clear"></div>
                                                                                         </div>
 
                                                                                         <ul class="info">
                                                                                             <li><i class="glyphicon glyphicon-comment"></i> 2 Comments</li>
-                                                                                            <li><i class="glyphicon glyphicon-time"></i> January 31, 2014</li>
-                                                                                            <li><i class="glyphicon glyphicon-user"></i> by Jane Doe</li>
-                                                                                            <li><i class="glyphicon glyphicon-tag"></i> jquery, slider, web design</li>
+                                                                                            <li><i class="glyphicon glyphicon-time"></i> July 21, 2014</li>
+                                                                                            <li><i class="glyphicon glyphicon-user"></i> by Adrian Black</li>
+                                                                                            
                                                                                         </ul>
 
                                                                                         <div class="blog-content">
-                                                                                            <p><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo...</p></div>
+                                                                                            <p><i class="fa fa-quote-left"></i> The MentorBear Team is delighted to launch our awesome online platform. </p></div>
                                                                                     </div>
                                                                                 </div>  
 
@@ -1423,7 +1406,7 @@
                                                             <div class="service center">
                                                                 <div class="service-icon"><i class="fa fa-smile-o"></i></div>
                                                                 <div class="service-detail">
-                                                                    <h6>Favorite Animals</h6>
+                                                                    <h6>Favorite Animal</h6>
                                                                     <h6></h6>
                                                                     <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
                                                                     <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
@@ -1498,7 +1481,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="panel panel-default">
+                                                                 <div class="panel panel-default">
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
@@ -1562,76 +1545,79 @@
                                             <div id="portfolio" class="content_2">
 
                                                 <!-- .title -->
-                                                <h1 class="h-bloc">My Mentors</h1> 
+                                                <h1 class="h-bloc">My Mentees</h1> 
                                                 
                                                 <div class="container-portfolio">
                                                 <?php 
                                                 include("searchmentors.php");
-                                                get_mentors_3();
-                                                savedmentors();
+                                                get_mentees();
+
                                                 ?>
+
                                                   
-                                                    <?php if(!$_SESSION['savedprof'][0]==0) {
+                                                    <?php if(!$_SESSION['menteesid'][0]==0) {
                                                     ?> <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php echo $_SESSION['savedprof'][0]['photo']; ?> alt"Add More Mentors"/>
-                                                            <a href="mymentor1.php"> <div class="mask" rel="portfolio" >
+                                                            <img src=<?php echo $_SESSION['menteesprof'][0]['photo']; ?> alt"Add More Mentors"/>
+                                                            <a href="#"> <div class="mask" rel="portfolio" >
                                                                
-                                                                <h2><?php echo $_SESSION['savednaem'][0]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][0][0]; ?></p>
-                                                                <p><?php  echo $_SESSION['savedid'][0][1]; ?></p>
+                                                                <h2><?php echo $_SESSION['menteesnames'][0]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['menteesnames'][0]['email']; ?></p>
+                                                                
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
                                                         <div class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
-                                                                <h2>Add More MentorBears</h2>
-                                                                <p>Check out FIND MENTORS</p>
+                                                                <h2>More MenteeBears</h2>
+                                                                <p>Coming Soon</p>
                                                             </div>
                                                         </div> 
-                                                        <?php } ?>
+                                                        <?php } ?>  
 
 
-
-                                                        <?php if(!$_SESSION['savedprof'][1]==0) {
+                                                    <?php if(!$_SESSION['menteesid'][1]==0) {
                                                     ?> <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php echo $_SESSION['savedprof'][1]['photo']; ?> alt"Add More Mentors"/>
-                                                            <a href="mymentor2.php"> <div class="mask" rel="portfolio" >
+                                                            <img src=<?php echo $_SESSION['menteesprof'][1]['photo']; ?> alt"Add More Mentors"/>
+                                                            <a href="#"> <div class="mask" rel="portfolio" >
                                                                
-                                                                <h2><?php echo $_SESSION['savednaem'][1]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][1][0]; ?></p>
-                                                                <p><?php  echo $_SESSION['savedid'][1][1]; ?></p>
+                                                                <h2><?php echo $_SESSION['menteesnames'][1]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['menteesnames'][1]['email']; ?></p>
+                                                                
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
                                                         <div class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
-                                                                <h2>Add More MentorBears</h2>
-                                                                <p>Check out FIND MENTORS</p>
+                                                                <h2>More MenteeBears</h2>
+                                                                <p>Coming Soon</p>
                                                             </div>
                                                         </div> 
-                                                        <?php } ?>
-
-                                                         <?php if(!$_SESSION['savedprof'][2]==0) {
+                                                        <?php } ?>  
+    
+                                                    <?php if(!$_SESSION['menteesid'][2]==0) {
                                                     ?> <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php echo $_SESSION['savedprof'][2]['photo']; ?> alt"Add More Mentors"/>
-                                                            <a href="mymentor3.php"> <div class="mask" rel="portfolio" >
+                                                            <img src=<?php echo $_SESSION['menteesprof'][1]['photo']; ?> alt"Add More Mentors"/>
+                                                            <a href="#"> <div class="mask" rel="portfolio" >
                                                                
-                                                                <h2><?php echo $_SESSION['savednaem'][2]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][2][0]; ?></p>
-                                                                <p><?php  echo $_SESSION['savedid'][2][1]; ?></p>
+                                                                <h2><?php echo $_SESSION['menteesnames'][2]['username']; ?></h2>
+                                                                <p><?php echo $_SESSION['menteesnames'][2]['email']; ?></p>
+                                                                
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
                                                         <div class="view view-first portfolio logo" data-cat="logo">
                                                             <img src="img/bear-farbe.svg" />
                                                             <div class="mask">
-                                                                <h2>Add More MentorBears</h2>
-                                                                <p>Check out FIND MENTORS</p>
+                                                                <h2>More MenteeBears</h2>
+                                                                <p>Coming Soon</p>
                                                             </div>
                                                         </div> 
-                                                        <?php } ?>
+                                                        <?php } ?>  
+    
+
+                                               
                                                 </div>
 
                                                 
@@ -1640,241 +1626,7 @@
 
                                             <!-- .portfolio -->
 
-                                            <div id="portfolio" class="content_2">
-                                                <!-- .title -->
-                                                <h1 class="h-bloc">Find Mentors </h1>
-
-                                                <!-- .container-portfolio -->
-                                                    
-                                                 <div class="container-portfolio">
-                                                
-                                                  <!-- #filters -->
-                                                  <ul id="filters" class="clearfix">
-                                                        <li><span class="filter active" data-filter="catWeb catGraphic catMotion logo">All</span></li>
-                                                        <li><span class="filter" data-filter="catWeb">Web Design</span></li>
-                                                        <li><span class="filter" data-filter="catGraphic">Graphic Design</span></li>
-                                                        <li><span class="filter" data-filter="catMotion">Motion Graphic</span></li>
-                                                        <li><span class="filter" data-filter="logo">Logo</span></li>
-                                                    </ul>
-                                                    <!-- /#filters -->
-                                                
-                                                    <!-- #portfoliolist -->
-
-                                                      
-
-                                                    <div id="portfoliolist">
-                                                     
-
-                                                                                                          
-                                                          <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php 
-                                                            echo $_SESSION['prof3'][0]['photo']; ?> />
-                                                            <a href="mentor1.php"> <div class="mask" rel="portfolio" >
-                                                               
-                                                                <h2><?php echo $_SESSION['names3'][0]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['id3'][0][1]; ?></p>
-                                                                <p><?php  echo $_SESSION['id3'][0][2]; ?></p>
-                                                            </div></a>
-                                                            </div> 
-
-                                                            
-
-                                                        <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php 
-                                                             echo $_SESSION['prof3'][1]['photo']; ?> />
-                                                            <a href="mentor2.php"> <div class="mask" rel="portfolio" >
-                                                               
-                                                                <h2><?php echo $_SESSION['names3'][1]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['id3'][1][1]; ?></p>
-                                                                <p><?php  echo $_SESSION['id3'][1][2]; ?></p>
-                                                            </div></a>
-                                                            </div> 
-
-
-                                                             <div id="mentor1" class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php 
-                                                             echo $_SESSION['prof3'][2]['photo']; ?> />
-                                                            <a href="mentor3.php"> <div class="mask" rel="portfolio" >
-                                                               
-                                                                <h2><?php echo $_SESSION['names3'][2]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['id3'][2][1]; ?></p>
-                                                                <p><?php  echo $_SESSION['id3'][2][2]; ?></p>
-                                                            </div></a>
-                                                            </div> 
-                                                            
-                                                        
-
-                                                        <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="img/bear-farbe.svg" />
-                                                            <div class="mask">
-                                                                <h2>More MentorBears</h2>
-                                                                <p>Coming Soon!</p>
-                                                                
-                                                                
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                        
-                                                       <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="img/bear-farbe.svg" />
-                                                            <div class="mask">
-                                                                <h2>More MentorBears</h2>
-                                                                <p>Coming Soon!</p>
-                                                                
-                                                                
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                        
-                                                        <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="img/bear-farbe.svg" />
-                                                            <div class="mask">
-                                                                <h2>More MentorBears</h2>
-                                                                <p>Coming Soon!</p>
-                                                                
-                                                                
-                                                                
-                                                            </div>
-                                                        </div> 
-
-                                                        <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src="img/bear-farbe.svg" />
-                                                            <div class="mask">
-                                                                <h2>More MentorBears</h2>
-                                                                <p>Coming Soon!</p>
-                                                                
-                                                                
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                        
-                                                   
-                                                        
-                                                        <div class="clear"></div>
-                                                    
-                                                  </div>
-                                                    <!-- #images/portfoliolist -->
-                                                </div>
-                                                <!-- /.container-portfolio -->
-                                            </div>
-                                            <!-- End .portfolio -->
-
                                             
-                                            <!-- End .blog -->
-
-                                            <!-- .contact -->
-                                            <div id="contact" class="content_2">
-
-                                                <h1 class="h-bloc">Contact - Contact Me</h1>
-
-
-                                                <div class="row">
-
-                                                    <div class="col-lg-12">
-                                                        <div id="map"></div>
-                                                    </div>  
-
-                                                    <div class="col-lg-12">
-                                                        <div class="row" id="contact-user">
-                                                            <div class="col-md-5">
-                                                                <div class="contact-info">
-                                                                    <!--<h3 class="main-heading"><span>Contact info</span></h3>-->
-
-                                                                    <div class="title_content" style="float: none;">
-                                                                        <div class="text_content">Contact info</div>
-                                                                        <div class="clear"></div>
-                                                                    </div>
-
-                                                                    <ul>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-map-marker"></i> Address:</span> San Francisco , CA.<br /><br /></li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-envelope"></i> Email:</span> brown.smith@gmail.com</li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-phone"></i> Gender:</span> </li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-globe"></i> Website:</span> www.brown-smith.com</li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-comment"></i> Skype:</span> brown-smith-skype</li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-thumbs-up"></i> G. Drive:</span> brown-s-gm@gmail.com</li>
-                                                                        <li><span class="span-info"><i class="glyphicon glyphicon-unchecked"></i> Skydrive:</span> brown-s-sk@hotmail.com</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <!-- /Contact Info -->
-                                                                <div class="clear"></div>
-
-                                                                <!--<h3 class="main-heading" style="margin-left: 22px;"><span>Follow me</span></h3>-->
-
-                                                                <div class="title_content tiltle_contacts" style="float: none;">
-                                                                    <div class="text_content">Follow me</div>
-                                                                    <div class="clear"></div>
-                                                                </div>
-
-
-
-                                                                <div id="profile_social">
-                                                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                                    <a href="#"><i class="fa fa fa-dribbble"></i></a>
-                                                                    <a href="#"><i class="fa fa-foursquare"></i></a>
-                                                                    <div class="clear"></div>
-                                                                </div>
-
-
-
-                                                            </div>
-
-                                                            <div class="col-md-7">
-                                                                <!-- Contact Form -->
-                                                                <div class="title_content" style="float: none;">
-                                                                    <div class="text_content">Let's keep in touch</div>
-                                                                    <div class="clear"></div>
-                                                                </div>
-
-                                                                <div class="contact-form">
-                                                                    <!--<h3 class="main-heading"><span>Let's keep in touch</span></h3>-->
-
-
-
-                                                                    <div id="contact-status"></div>
-
-                                                                    <form action="" id="contactform">
-                                                                        <p class="form-group" id="contact-name">
-                                                                            <label for="name">Your Name</label>
-                                                                            <input type="text" name="name" class="form-control name-contact" id="inputSuccess" placeholder="Name..." />
-                                                                        </p>
-                                                                        <p class="form-group" id="contact-email"> 
-                                                                            <label for="email">Your Email</label>
-                                                                            <input type="text" name="email" class="form-control email-contact" id="inputSuccess" placeholder="Email..." />
-                                                                        </p>
-
-                                                                        <p class="form-group" id="contact-message">
-                                                                            <label for="message">Your Message</label>
-                                                                            <textarea name="message" cols="88" rows="6" class="form-control message-contact" id="inputError" placeholder="Message..."></textarea>
-                                                                        </p>
-                                                                        <input type="reset" name="reset" value="CLEAR" class="reset">
-                                                                        <!-- <input type="submit" name="submit" value="SEND MESSAGE" class="submit">-->
-
-                                                                        <section class="button-demo" style="display: inline-block;">
-                                                                            <button class="ladda-button submit send_email" name="submit" data-color="green" data-style="expand-left">SEND MESSAGE</button>
-                                                                        </section>
-
-                                                                    </form>
-                                                                </div>
-                                                                <!-- /Contact Form -->
-                                                            </div>
-                                                        </div>
-                                                    </div>  
-
-                                                </div>
-                                            </div>
-
-                                             
-                                                    
-                                                         
-
-                                                        
-
-
-                                                   
-                                                <div class="clear"></div>
-
                                             
                                             <!-- End .contact -->
 

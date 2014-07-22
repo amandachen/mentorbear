@@ -18,7 +18,10 @@
 
 
 $z=0;
-    
+
+
+$_SESSION['viewingmentor']=$z;    
+
 
 //view check
 
@@ -131,25 +134,19 @@ $z=0;
                                     <div class="row">
 
                                         <!-- Profile Image -->
-                                        <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
+                                         <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
 
-                                            <div class="image-holder one" id="pic_prof_1"  style="display:none">
-
-                                                <img class="head-image up circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image front circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
+                                            
+                                            
+                                            <div class="image-holder one" id="pic_prof_1"  >
+                                                
+                                                <img class="head-image up circle center-cropped3" style="background-image" src=<?php echo $_SESSION['savedprof'][$z]['photo']; ?>  alt="" />
+                                               
 
                                             </div>
 
                                             <!-- style for simple image profile -->     
-                                            <div class="circle-img" id="pic_prof_2"></div>
-
+                                           
                                         </div>
                                         <!-- End Profile Image -->
 
@@ -158,14 +155,13 @@ $z=0;
                                             <!-- Profile info -->
                                             <div id="profile_info">
 
-                                                <h1 id="name" class="transition-02"><?php 
+                                                <h1 id="name" class="transition-02"><?php echo htmlentities($_SESSION['savednaem'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
 
-                                            
-
-                                                echo htmlentities($_SESSION['name3'][1]['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
-                                                <h4 class="line"><span class="value"><?php if($_SESSION['savedprof'][0]['hschool']==1) {
+                                                <h4 class="line"><span class="value"><?php if($_SESSION['savedprof'][$z]['hschool']==1) {
                                                                         echo "High School";
+
                                                                     } else {
+                                                                       
                                                                         echo "College";
                                                                     }
 
@@ -173,33 +169,24 @@ $z=0;
                                                                 <div class="clear"></div></h4>
                                                 <h6><span class="fa fa-map-marker"></span> <?php 
 
-                                                echo htmlentities($_SESSION['savedprof'][0]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                echo htmlentities($_SESSION['savedprof'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
 
                                             <!-- Profile Description -->
                                             <div id="profile_desc">
-                                                <p>
-                                                    <?php var_dump($goview); var_dump($newvcount); ?>
-                                                </p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing eli
-                                                </p>
+                                               
                                             </div>
                                             <!-- End Profile Description -->  
 
 
                                             <!-- Name -->
                                             <div id="profile_social">
-                                                <h6>My Social Profiles</h6>
-                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                <a href="#"><i class="fa fa fa-dribbble"></i></a>
-                                                <a href="#"><i class="fa fa-foursquare"></i></a>
+                                                <h6></h6>
+                                                    <h6>Chat Coming Soon</h6>
                                                 <div class="clear"></div>
-                                            </div>
+                                            </div> 
                                             <!-- End Name -->  
 
                                         </div>
@@ -221,6 +208,7 @@ $z=0;
 
                                           
                                             <a href="private.php" id="print"><i class="fa fa-arrow-left icon_print"></i> </a>
+                                            <a href="deletementor1.php" id="print"><i class="fa fa-times icon_print"></i> </a>
                                           
 
                                         </ul>
@@ -331,14 +319,15 @@ $z=0;
                                                     </div>
                                                     <!-- End left-wrap -->
 
-                                                    <div class="col-md-6 profile-r">
+                                                    <div  class="col-md-6 profile-r " >
 
-                                                        <div class="cycle-slideshow">
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                        </div>
-
+                                                            
+                                                            <img class="center-cropped2" id='profimg' style="background-image" src=<?php echo $_SESSION['savedprof'][$z]['photo']; ?> alt="" />
+                                                
+                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
+                                                            <label></label><input type="string" name="image" placeholder="Change Image URL"/>
+                                                            <input type="submit" />
+                                                            </form>
                                                     </div>
 
                                                 </div>
@@ -511,14 +500,14 @@ $z=0;
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                                What I'd like in a mentor...
+                                                                                Days Available
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseTwo" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i> My Availabity
+                                                                            <i class="fa fa-quote-left"></i> Days Available
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -526,7 +515,7 @@ $z=0;
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                My Availability
+                                                                                Time Available
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
