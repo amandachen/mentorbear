@@ -157,6 +157,92 @@
             $_POST['literature']=0;
             
         }
+         if(empty($_POST['inperson'])) 
+        { 
+            $_POST['inperson']=0;
+            
+        }
+         if(empty($_POST['email2'])) 
+        { 
+            $_POST['email2']=0;
+            
+        }
+         if(empty($_POST['vchat'])) 
+        { 
+            $_POST['vchat']=0;
+            
+        }
+         if(empty($_POST['im'])) 
+        { 
+            $_POST['im']=0;
+            
+        }
+         if(empty($_POST['phone'])) 
+        { 
+            $_POST['phone']=0;
+            
+        }
+         if(empty($_POST['other'])) 
+        { 
+            $_POST['other']=0;
+            
+        }
+         if(empty($_POST['academics'])) 
+        { 
+            $_POST['academics']=0;
+            
+        } 
+
+        if(empty($_POST['careers'])) 
+        { 
+            $_POST['careers']=0;
+            
+        }
+         if(empty($_POST['sociallife'])) 
+        { 
+            $_POST['sociallife']=0;
+            
+        } 
+
+        if(empty($_POST['applications'])) 
+        { 
+            $_POST['applications']=0;
+            
+        }
+
+         if(empty($_POST['scholarships'])) 
+        { 
+            $_POST['scholarships']=0;
+            
+        }
+        if(empty($_POST['transitioning'])) 
+        { 
+            $_POST['transitioning']=0;
+            
+        }
+        if(empty($_POST['weekdays'])) 
+        { 
+            $_POST['weekdays']=0;
+            
+        }
+        if(empty($_POST['saturdays'])) 
+        { 
+            $_POST['saturdays']=0;
+            
+        }
+        if(empty($_POST['sundays'])) 
+        { 
+            $_POST['sundays']=0;
+            
+        }
+          if(empty($_POST['genderpref'])) 
+        { 
+            $_POST['genderpref']=0;
+            
+        }
+
+
+
         
         // An INSERT query is used to add new rows to a database table. 
         // Again, we are using special tokens (technically called parameters) to 
@@ -175,8 +261,75 @@
                 :email, 
                 :mentor
             ) 
-        "; 
-         
+
+            ";
+
+        $query = "
+
+            INSERT INTO profiles (
+                female,
+                hschool,
+                mentor,
+                math,
+                english,
+                art,
+                physics,
+                biology,
+                history,
+                chemistry,
+                economics,
+                literature,
+                genderpref,
+                inperson,
+                email2,
+                vchat,
+                im,
+                phone,
+                other,
+                academics,
+                careers,
+                sociallife,
+                applications,
+                scholarships,
+                transitioning,
+                time,
+                weekdays,
+                saturdays,
+                sundays
+            ) VALUES (
+                :female,
+                :hschool,
+                :mentor,
+                :math,
+                :english,
+                :art,
+                :physics,
+                :biology,
+                :history,
+                :chemistry,
+                :economics,
+                :literature,
+                :genderpref,
+                :inperson,
+                :email2,
+                :vchat,
+                :im,
+                :phone,
+                :other,
+                :academics,
+                :careers,
+                :sociallife,
+                :applications,
+                :scholarships,
+                :transitioning,
+                :time,
+                :weekdays,
+                :saturdays,
+                :sundays
+            )
+        
+            ";
+
         // A salt is randomly generated here to protect again brute force attacks 
         // and rainbow table attacks.  The following statement generates a hex 
         // representation of an 8 byte salt.  Representing this in hex provides 
@@ -213,6 +366,40 @@
             ':salt' => $salt, 
             ':email' => $_POST['email'], 
             ':mentor' => $_POST['mentor']
+
+            );
+
+        $query_params = array( 
+
+            ':female' => $_POST['female'],
+            ':hschool' => $_POST['hschool'],
+            ':mentor' => $_POST['mentor'],
+            ':math' => $_POST['math'],
+            ':english' => $_POST['english'],
+            ':art' => $_POST['art'],
+            ':physics' => $_POST['physics'],
+            ':biology' => $_POST['biology'],
+            ':history' => $_POST['history'],
+            ':chemistry' => $_POST['chemistry'],
+            ':economics' => $_POST['economics'],
+            ':literature' => $_POST['literature'],
+            ':genderpref' => $_POST['genderpref'],
+            ':inperson' => $_POST['inperson'],
+            ':email2' => $_POST['email2'],
+            ':vchat' => $_POST['vchat'],
+            ':im' => $_POST['im'],
+            ':phone' => $_POST['phone'],
+            ':other' => $_POST['other'],
+            ':academics' => $_POST['academics'],
+            ':careers' => $_POST['careers'],
+            ':sociallife' => $_POST['sociallife'],
+            ':applications' => $_POST['applications'],
+            ':scholarships' => $_POST['scholarships'],
+            ':transitioning' => $_POST['transitioning'],
+            ':time' => $_POST['time'],
+            ':weekdays' => $_POST['weekdays'],
+            ':saturdays' => $_POST['saturdays'],
+            ':sundays' => $_POST['sundays'],   
         ); 
          
          
@@ -275,6 +462,7 @@
         <li>Mentoring</li> 
         <li>Time</li> 
         <li>Availability</li>  
+        <li>Profile</li>  
     </ul>
     <!-- fieldsets -->
     <fieldset>
@@ -300,11 +488,11 @@
 
         <h3 class="fs-subtitle"> Year in School</h3>
                 <div class="squaredOne" id="square3">
-             <input type="radio" value="1" id="squaredOne3" name="hschool"/>
+             <input type="radio" value="h" id="squaredOne3" name="hschool"/>
             <label for="squaredOne3">High School</label>
         </div>
         <div class="squaredOne" id="square4">
-             <input type="radio" value="0" id="squaredOne4" name="hschool"/>
+             <input type="radio" value="c" id="squaredOne4" name="hschool"/>
             <label for="squaredOne4">College</label>
         </div>
 
@@ -331,7 +519,7 @@
     <th> <div class="squaredOne" id="english">
              <input type="checkbox" value="1" id="englishl" name="english"/>
             <label for="englishl">English</label></div></th>
-    <th>  <div class="squaredOne" id="art">
+    <th>  <div class="  quaredOne" id="art">
              <input type="checkbox" value="1" id="artl" name="art"/>
             <label for="artl">Art</label></div></th>
 
@@ -387,16 +575,16 @@
 
     <fieldset>
         <h2 class="fs-title">Do you have a gender preference for your mentor/mentee?</h2>
-       <div class="squaredOne" id="femaleonly">
-             <input type="checkbox" value="1" id="female1" name="femaleonly" />
+       <div class="squaredOne" id="genderpref">
+             <input type="checkbox" value="1" id="female1" name="genderpref" />
             <label for="female1">Female only</label>
         </div>
         <div class="squaredOne" id="maleonly">
-             <input type="checkbox" value="0" id="male1" name="maleonly"/>
+             <input type="checkbox" value="1" id="male1" name="genderpref"/>
             <label for="male1">Male only</label>
         </div>
         <div class="squaredOne" id="dontmind">
-             <input type="checkbox" value="2" id="dm" name="dontmind"/>
+             <input type="checkbox" value="1" id="dm" name="genderpref"/>
             <label for="dm">I don't mind</label>
         </div>
          <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -412,8 +600,8 @@
             <input type="checkbox" value="1" id="inperson1" name="inperson" />
             <label for="inperson1">In-Person</label>
         </div>
-        <div class="squaredOne" id="email">
-             <input type="checkbox" value="0" id="email1" name="email"/>
+        <div class="squaredOne" id="email2">
+             <input type="checkbox" value="1" id="email1" name="email2"/>
             <label for="email1">E-mail</label>
         </div>
          <div class="squaredOne" id="vchat">
@@ -421,7 +609,7 @@
             <label for="vchat1">Video Chat</label>
         </div>
         <div class="squaredOne" id="im">
-             <input type="checkbox" value="0" id="im1" name="im"/>
+             <input type="checkbox" value="1" id="im1" name="im"/>
             <label for="im1">Instant Message</label>
         </div>
          <div class="squaredOne" id="phone">
@@ -429,7 +617,7 @@
             <label for="phone1">Phone</label>
         </div>
         <div class="squaredOne" id="other">
-             <input type="checkbox" value="0" id="other1" name="other"/>
+             <input type="checkbox" value="1" id="other1" name="other"/>
             <label for="other1">Other</label>
         </div>
 
@@ -443,27 +631,27 @@
         <h2 class="fs-title">In which areas would you most value a mentor?</h2>
         <h3 class="fs-subtitle">Choose as many as you'd like</h3>
        <div class="squaredOne" id="Academics">
-             <input type="checkbox" value="1" id="academics1" name="academics" />
+             <input type="checkbox" value="academics" id="academics1" name="academics" />
             <label for="academics1">Academics</label>
         </div>
         <div class="squaredOne" id="Careers">
-             <input type="checkbox" value="0" id="careers1" name="careers"/>
+             <input type="checkbox" value="careers" id="careers1" name="careers"/>
             <label for="careers1">Careers</label>
         </div>
         <div class="squaredOne" id="sociallife">
-             <input type="checkbox" value="1" id="sociallife1" name="sociallife"/>
+             <input type="checkbox" value="sociallife" id="sociallife1" name="sociallife"/>
             <label for="sociallife1">Social Life</label>
         </div>
         <div class="squaredOne" id="applications">
-             <input type="checkbox" value="0" id="applications1" name="applications"/>
+             <input type="checkbox" value="applications" id="applications1" name="applications"/>
             <label for="applications1">Applications</label>
         </div>
          <div class="squaredOne" id="scholarships">
-             <input type="checkbox" value="" id="scholarships1" name="scholarships"/>
+             <input type="checkbox" value="scholarships" id="scholarships1" name="scholarships"/>
             <label for="scholarships1">Scholarships</label>
         </div>
         <div class="squaredOne" id="transitioning">
-             <input type="checkbox" value="" id="transitioning1" name="transitioning"/>
+             <input type="checkbox" value="transitioning" id="transitioning1" name="transitioning"/>
              <label for="transitioning1">Transitioning to College</label>
         </div>
          <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -478,27 +666,27 @@
         <h3 class="fs-subtitle">Please check one</h3>
 
        <div class="squaredOne" id="time1">
-            <input type="checkbox" value="1" id="t1" name="time1" />
+            <input type="checkbox" value="1" id="t1" name="time" />
             <label for="t1">15-30 minutes</label>
         </div>
         <div class="squaredOne" id="time2">
-             <input type="checkbox" value="0" id="t2" name="time2"/>
+             <input type="checkbox" value="2" id="t2" name="time"/>
             <label for="t2">30-45 minutes</label>
         </div>
          <div class="squaredOne" id="time3">
-            <input type="checkbox" value="1" id="t3" name="time3" />
+            <input type="checkbox" value="3" id="t3" name="time" />
             <label for="t3">45-60 minutes</label>
         </div>
         <div class="squaredOne" id="time4">
-             <input type="checkbox" value="0" id="t4" name="time4"/>
+             <input type="checkbox" value="4" id="t4" name="time"/>
             <label for="t4">1-1.5 hours</label>
         </div>
          <div class="squaredOne" id="time5">
-            <input type="checkbox" value="1" id="t5" name="time5" />
+            <input type="checkbox" value="5" id="t5" name="time" />
             <label for="t5">1.5-3 hours</label>
         </div>
         <div class="squaredOne" id="time6">
-             <input type="checkbox" value="0" id="t6" name="time6"/>
+             <input type="checkbox" value="6" id="t6" name="time"/>
             <label for="t6">3+ hours</label>
         </div>
 
@@ -516,7 +704,7 @@
             <label for="weekdayz">Weekdays</label>
         </div>
         <div class="squaredOne" id="saturdays">
-             <input type="checkbox" value="0" id="saturdayz" name="saturdays"/>
+             <input type="checkbox" value="1" id="saturdayz" name="saturdays"/>
             <label for="saturdayz">Saturdays</label>
         </div>
          <div class="squaredOne" id="sundays">
@@ -529,21 +717,12 @@
     </fieldset>
 
     <fieldset>
-        <h2 class="fs-title">Short Bio</h2>
-        <h3 class="fs-subtitle">Please write a quick bio that other users will be able to see on your profile</h3>
+        <h2 class="fs-title">Profile</h2>
+        <h3 class="fs-subtitle">You're almost done!</h3>
 
-       <div class="squaredOne" id="weekdays">
-            <input type="checkbox" value="1" id="weekdayz" name="weekdays" />
-            <label for="weekdayz">Weekdays</label>
-        </div>
-        <div class="squaredOne" id="saturdays">
-             <input type="checkbox" value="0" id="saturdayz" name="saturdays"/>
-            <label for="saturdayz">Saturdays</label>
-        </div>
-         <div class="squaredOne" id="sundays">
-            <input type="checkbox" value="1" id="sundayz" name="sundays" />
-            <label for="sundayz">Sundays</label>
-        </div>
+        <textarea name="bio" id="bio" placeholder="Write a few sentences about yourself for your profile."></textarea>
+
+        <input type="text" name="city" id="city" placeholder="What city do you live in?" />
 
         <input type="button" name="previous" class="previous action-button" value="Previous" />
 
