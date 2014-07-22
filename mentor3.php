@@ -4,14 +4,7 @@
     require("common.php"); 
      
     // At the top of the page we check to see whether the user is logged in or not 
-    if(empty($_SESSION['user'])) 
-
-
-                                             
-                                                        
-                                                                
-                                                          
-                                                            
+    if(empty($_SESSION['user']))                                                   
                                                         
     { 
         // If they are not, we redirect them to the login page. 
@@ -22,8 +15,16 @@
         die("Redirecting to login.php"); 
     } 
 
+
+
 $z=2;
     
+
+//view check
+
+if(!$_SESSION['savedmentor']) {
+        
+
            
 $paramview = array( 
             ':id' => $_SESSION['user']['id']); 
@@ -48,16 +49,21 @@ $queryviews = "
 
     if($goview>6)                                                      
     { 
+
+        $_SESSION['tryview']=true;
         header("Location: private.php"); 
          
-        // Remember that this die statement is absolutely critical.  Without it,
+         
+       // Remember that this die statement is absolutely critical.  Without it,
         // people can view your members-only content without logging in. 
         die("Redirecting to private.php"); 
+
 
         
     }
 
     $newvcount=$goview+1; 
+
 
     $pvadd = array( 
             ':newvcount' => $newvcount,
@@ -75,6 +81,15 @@ $queryviews = "
     { 
     die("Failed to run mentor query2: " . $ex->getMessage()); 
     } 
+}
+    $_SESSION['savedmentor']=false;
+
+if($_SESSION['mentormax']) {
+    echo '<script language="javascript">';
+    echo 'alert("You have reached the maximum of 3 saved mentors. Get more with MentorBear premium!")';
+    echo '</script>';
+}
+
 
     ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -272,7 +287,7 @@ $queryviews = "
 
                                           
                                             <a href="private.php" id="print"><i class="fa fa-arrow-left icon_print"></i> </a>
-                                            <a href="#" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
+                                            <a href="savementor3.php" id="downlowd"><i class="fa fa-save icon_print"></i> </a>
 
                                         </ul>
                                         <!-- /resp-tabs-list -->
@@ -350,16 +365,15 @@ $queryviews = "
                                                             <li>
 
 
-                                                                <?php 
+                                                               
 
-                                                                if($_SESSION['names3'][$z]['mentor']==1) {
-                                                                        ?> <i class="glyphicon glyphicon-globe"></i>
+                                                                 <i class="glyphicon glyphicon-globe"></i>
                                                                 <label>College</label>
-                                                                <span class="value"><?php echo $_SESSION['prof3']['college'] ?></span>
+                                                                <span class="value"><?php echo $_SESSION['id3'][$z][1] ?></span>
                                                                 <div class="clear"></div>
-                                                                    <?php } 
+                                                                   
                                                     
-                                                                     ?>
+                                                                  
 
                                                                 
                                                             </li>

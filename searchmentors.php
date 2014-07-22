@@ -129,9 +129,142 @@ function get_mentors_3() {
         $prof3 = $stmtprof3->fetchALL(PDO::FETCH_ASSOC); 
 
         $_SESSION['prof3'] = $prof3; 
+}
 
+function savedmentors() {
+        require("common.php");
+         $mentorprof = array( 
+            ':id' => $_SESSION['mentorids'][0],
+            ':id1'=> $_SESSION['mentorids'][1],
+            ':id2'=> $_SESSION['mentorids'][2]
+              ); 
      
+        $mentorquery = " 
+        SELECT  
+                genderpref, 
+                id,
+                female, 
+                hschool, 
+                math,
+                english,
+                history,
+                chemistry,
+                economics,
+                engineering,
+                physics,
+                computers,
+                biology,
+                art,
+                music,
+                literature,
+                extra1,
+                extra2,
+                extra3,
+                extra4,
+                extra5,
+                academics,
+                career,
+                sociallife,
+                applications,
+                scholarship,
+                transitioning,
+                email,
+                inperson,
+                vchat,
+                phone,
+                im,
+                other,
+                zipcode,
+                time,
+                available,
+                me,
+                photo
 
+                FROM profiles
+                WHERE 
+                id IN (:id, :id1, :id2)
+                "; 
+        try 
+        { 
+            // Execute the query against the database 
+            $stmt= $db->prepare($mentorquery); 
+            $result = $stmt->execute($mentorprof); 
+        } 
+        catch(PDOException $ex) 
+        { 
+            // Note: On a production website, you should not output $ex->getMessage(). 
+            // It may provide an attacker with helpful information about your code.  
+            die("Failed to run find mentor query: " . $ex->getMessage()); 
+        } 
+         
+        
+        $ps = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+
+        $_SESSION['savedprof'] = $ps; 
+
+        $paramsfind3 = array( 
+            ':id' => $_SESSION['mentorids'][0],
+            ':id1'=> $_SESSION['mentorids'][1],
+            ':id2'=> $_SESSION['mentorids'][2]
+              ); 
+           
+    $queryfind3 = " 
+        SELECT  
+        username, email
+        FROM userz
+        WHERE 
+        id IN (:id, :id1, :id2)
+        "; 
+
+        try 
+        { 
+            $stmtfind3 = $db->prepare($queryfind3); 
+            $resultfind3 = $stmtfind3->execute($paramsfind3); 
+        } 
+        catch(PDOException $ex) 
+        { 
+            // Note: On a production website, you should not output $ex->getMessage(). 
+            // It may provide an attacker with helpful information about your code.  
+            die("Failed to run find mentor query: " . $ex->getMessage()); 
+        } 
+         
+        
+        $names3 = $stmtfind3->fetchALL(PDO::FETCH_ASSOC); 
+
+        $_SESSION['savednaem'] = $names3; 
+
+        $paramsfind3 = array( 
+            ':id' => $_SESSION['mentorids'][0],
+            ':id1'=> $_SESSION['mentorids'][1],
+            ':id2'=> $_SESSION['mentorids'][2]
+              ); 
+           
+    $queryfind3 = " 
+        SELECT  
+        college, major
+        FROM mentors
+        WHERE 
+        id IN (:id, :id1, :id2)
+        "; 
+
+        try 
+        { 
+            $stmtfind3 = $db->prepare($queryfind3); 
+            $resultfind3 = $stmtfind3->execute($paramsfind3); 
+        } 
+        catch(PDOException $ex) 
+        { 
+            // Note: On a production website, you should not output $ex->getMessage(). 
+            // It may provide an attacker with helpful information about your code.  
+            die("Failed to run find mentor query: " . $ex->getMessage()); 
+        } 
+         
+        
+        $names3 = $stmtfind3->fetchALL(PDO::FETCH_NUM); 
+
+        $_SESSION['savedid'] = $names3; 
+
+        
                
 }
 

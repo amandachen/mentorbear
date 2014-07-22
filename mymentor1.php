@@ -22,73 +22,7 @@ $z=0;
 
 //view check
 
-if(!$_SESSION['savedmentor']) {
-        
 
-           
-$paramview = array( 
-            ':id' => $_SESSION['user']['id']); 
-$queryviews = " 
-    SELECT  
-    vcount
-    FROM Views
-    WHERE 
-    id = :id
-    "; 
-    try 
-    { 
-    $stmtor = $db->prepare($queryviews); 
-    $resultor = $stmtor->execute($paramview); 
-    } 
-    catch(PDOException $ex) 
-    { 
-    die("Failed to run mentor query: " . $ex->getMessage()); 
-    } 
-    $goviewsarray = $stmtor->fetchALL(PDO::FETCH_NUM); 
-    $goview=intval($goviewsarray[0][0]);
-
-    if($goview>6)                                                      
-    { 
-
-        $_SESSION['tryview']=true;
-        header("Location: private.php"); 
-         
-         
-       // Remember that this die statement is absolutely critical.  Without it,
-        // people can view your members-only content without logging in. 
-        die("Redirecting to private.php"); 
-
-
-        
-    }
-
-    $newvcount=$goview+1; 
-
-
-    $pvadd = array( 
-            ':newvcount' => $newvcount,
-             ':id' => $_SESSION['user']['id']
-            );
-
-    $qvadd = " 
-    UPDATE Views SET vcount = :newvcount WHERE id = :id";
-    try 
-    { 
-    $stmt = $db->prepare($qvadd); 
-    $result = $stmt->execute($pvadd); 
-    } 
-    catch(PDOException $ex) 
-    { 
-    die("Failed to run mentor query2: " . $ex->getMessage()); 
-    } 
-}
-    $_SESSION['savedmentor']=false;
-
-if($_SESSION['mentormax']) {
-    echo '<script language="javascript">';
-    echo 'alert("You have reached the maximum of 3 saved mentors. Get more with MentorBear premium!")';
-    echo '</script>';
-}
 
 
     ?>
@@ -229,7 +163,7 @@ if($_SESSION['mentormax']) {
                                             
 
                                                 echo htmlentities($_SESSION['name3'][1]['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
-                                                <h4 class="line"><span class="value"><?php if($_SESSION['prof3'][0]['hschool']==1) {
+                                                <h4 class="line"><span class="value"><?php if($_SESSION['savedprof'][0]['hschool']==1) {
                                                                         echo "High School";
                                                                     } else {
                                                                         echo "College";
@@ -239,7 +173,7 @@ if($_SESSION['mentormax']) {
                                                                 <div class="clear"></div></h4>
                                                 <h6><span class="fa fa-map-marker"></span> <?php 
 
-                                                echo htmlentities($_SESSION['prof3'][0]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                echo htmlentities($_SESSION['savedprof'][0]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
@@ -287,7 +221,7 @@ if($_SESSION['mentormax']) {
 
                                           
                                             <a href="private.php" id="print"><i class="fa fa-arrow-left icon_print"></i> </a>
-                                            <a href="savementor1.php" id="downlowd"><i class="fa fa-save icon_print"></i> </a>
+                                          
 
                                         </ul>
                                         <!-- /resp-tabs-list -->
@@ -307,7 +241,7 @@ if($_SESSION['mentormax']) {
                                                             <div class="text_content">
 
                                                                 <?php
-                                                                echo htmlentities($_SESSION['names3'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                                echo htmlentities($_SESSION['savednaem'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></div>
                                                             <div class="clear"></div>
                                                         </div>
 
@@ -318,14 +252,14 @@ if($_SESSION['mentormax']) {
                                                                 <label>Name</label>
                                                                 <span class="value"><?php 
 
-                                                                echo htmlentities($_SESSION['names3'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                echo htmlentities($_SESSION['savednaem'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
                                                             <li>
                                                                 <i class="glyphicon glyphicon-book" ></i>
                                                                 <label>School</label>
-                                                                <span class="value"><?php if($_SESSION['prof3'][$z]['hschool']==1) {
+                                                                <span class="value"><?php if($_SESSION['savedprof'][$z]['hschool']==1) {
                                                                         echo "High School";
                                                                     } else {
                                                                         echo "College";
@@ -338,21 +272,21 @@ if($_SESSION['mentormax']) {
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
                                                                 <label>Zip Code</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['prof3'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['savedprof'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
                                                             <li>
                                                                 <i class="glyphicon glyphicon-envelope"></i>
                                                                 <label>Email</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['names3'][$z]['email'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['savednaem'][$z]['email'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
                                                             <li>
                                                                 <i class="glyphicon glyphicon-phone"></i>
                                                                 <label>Gender</label>
-                                                                <span class="value"><?php if($_SESSION['prof3'][$z]['gender']==1) {
+                                                                <span class="value"><?php if($_SESSION['savedprof'][$z]['gender']==1) {
                                                                         echo "Female";
                                                                     } else {
                                                                         echo "Male";
@@ -369,7 +303,7 @@ if($_SESSION['mentormax']) {
 
                                                                  <i class="glyphicon glyphicon-globe"></i>
                                                                 <label>College</label>
-                                                                <span class="value"><?php echo $_SESSION['id3'][$z][1] ?></span>
+                                                                <span class="value"><?php echo $_SESSION['savedid'][$z][1] ?></span>
                                                                 <div class="clear"></div>
                                                                    
                                                     
@@ -390,7 +324,7 @@ if($_SESSION['mentormax']) {
                                                             <i class="fa fa-quote-left"></i>       
                                                            <?php 
 
-                                                           echo htmlentities($_SESSION['prof3'][$z]['me'], ENT_QUOTES, 'UTF-8'); ?>
+                                                           echo htmlentities($_SESSION['savedprof'][$z]['me'], ENT_QUOTES, 'UTF-8'); ?>
 
                                                         </p>
 
@@ -427,41 +361,41 @@ if($_SESSION['mentormax']) {
                                                                     <h6></h6>
                                                                     <?php 
 
-                                                        if($_SESSION['prof3'][$z]['art']==1) {
+                                                        if($_SESSION['savedprof'][$z]['art']==1) {
                                                                         echo "Art <br>";
                                                         } 
-                                                        if($_SESSION['prof3'][$z]['biology']==1) {
+                                                        if($_SESSION['savedprof'][$z]['biology']==1) {
                                                                         echo "Biology <br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['chemistry']==1) {
+                                                        if($_SESSION['savedprof'][$z]['chemistry']==1) {
                                                                         echo "Chemistry <br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['computers']==1) {
+                                                        if($_SESSION['savedprof'][$z]['computers']==1) {
                                                                         echo "Computers<br>";
                                                                     }             
-                                                        if($_SESSION['prof3'][$z]['engineering']==1) {
+                                                        if($_SESSION['savedprof'][$z]['engineering']==1) {
                                                                         echo "Engineering<br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['economics']==1) {
+                                                        if($_SESSION['savedprof'][$z]['economics']==1) {
                                                                         echo "Economics<br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['english']==1) {
+                                                        if($_SESSION['savedprof'][$z]['english']==1) {
                                                                         echo "English <br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['history']==1) {
+                                                        if($_SESSION['savedprof'][$z]['history']==1) {
                                                                         echo "History <br>";
                                                                     } 
 
-                                                        if($_SESSION['prof3'][$z]['literature']==1) {
+                                                        if($_SESSION['savedprof'][$z]['literature']==1) {
                                                                         echo "Literature<br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['math']==1) {
+                                                        if($_SESSION['savedprof'][$z]['math']==1) {
                                                                         echo "Math <br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['music']==1) {
+                                                        if($_SESSION['savedprof'][$z]['music']==1) {
                                                                         echo "Music<br>";
                                                                     } 
-                                                        if($_SESSION['prof3'][$z]['physics']==1) {
+                                                        if($_SESSION['savedprof'][$z]['physics']==1) {
                                                                         echo "Physics <br>";
                                                                     } 
                                                         
@@ -485,11 +419,11 @@ if($_SESSION['mentormax']) {
                                                                 <div class="service-detail">
                                                                     <h6>Extracurriculars</h6>
                                                                     <h6></h6>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra5']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra1']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra2']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra3']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra4']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra5']."<br>"; ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -500,11 +434,11 @@ if($_SESSION['mentormax']) {
                                                                 <div class="service-detail">
                                                                     <h6>Favorite Animals</h6>
                                                                     <h6></h6>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra5']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra1']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra2']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra3']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra4']."<br>"; ?>
+                                                                    <?php echo $_SESSION['savedprof'][$z]['extra5']."<br>"; ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -546,25 +480,25 @@ if($_SESSION['mentormax']) {
                                                                     <div id="collapseOne" class="panel-collapse collapse in">
                                                                         <div class="panel-body">
                                                                            
-                                                                           <?php  if($_SESSION['prof3'][$z]['academics']==1) {
+                                                                           <?php  if($_SESSION['savedprof'][$z]['academics']==1) {
                                                                         echo "Academics <br>";
 
                                                                     }       
-                                                                    if($_SESSION['prof3'][$z]['applications']==1) {
+                                                                    if($_SESSION['savedprof'][$z]['applications']==1) {
                                                                         echo "Applications <br>";
                                                                     }
-                                                                    if($_SESSION['prof3'][$z]['careers']==1) {
+                                                                    if($_SESSION['savedprof'][$z]['careers']==1) {
                                                                         echo "Careers <br>";
                                                                     } 
-                                                                    if($_SESSION['prof3'][$z]['scholarship']==1) {
+                                                                    if($_SESSION['savedprof'][$z]['scholarship']==1) {
                                                                         echo "Scholarships <br>";
                                                                     } 
-                                                                     if($_SESSION['prof3'][$z]['sociallife']==1) {
+                                                                     if($_SESSION['savedprof'][$z]['sociallife']==1) {
                                                                         echo "Social Life <br>";
                                                                     } 
                                                                     
                                                                     
-                                                                    if($_SESSION['prof3'][$z]['transitioning']==1) {
+                                                                    if($_SESSION['savedprof'][$z]['transitioning']==1) {
                                                                         echo "Transitioning to College <br>";
                                                                     } 
                                                                     
