@@ -630,9 +630,9 @@ try
     <th> <div class="squaredOne" id="english">
              <input type="checkbox" value="1" id="englishl" name="english"/>
             <label for="englishl">English</label></div></th>
-    <th>  <div class="  quaredOne" id="art">
-             <input type="checkbox" value="1" id="artl" name="art"/>
-            <label for="artl">Art</label></div></th>
+    <th>  <div class="  squaredOne" id="art">
+             <input type="checkbox" value="1" id="art1" name="art"/>
+            <label for="art1">Art</label></div></th>
 
   </tr>
     <tr>
