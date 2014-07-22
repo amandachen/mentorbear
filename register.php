@@ -306,8 +306,6 @@
             );
 
        
-         
-         
 
         try 
         { 
@@ -360,7 +358,7 @@ $query = "
                 extra4,
                 extra5,
                 url,
-                state,
+                zipcode,
                 me
             ) VALUES (
                 :female,
@@ -398,7 +396,7 @@ $query = "
                 :extra4,
                 :extra5,
                 :url,
-                :state,
+                :zipcode,
                 :me
 
             )
@@ -442,7 +440,7 @@ $query = "
             ':extra4' => $_POST['extra4'],
             ':extra5' => $_POST['extra5'],
             ':url' => 0,
-            ':state' => $_POST['state'],
+            ':zipcode' => $_POST['zipcode'],
             ':me' => $_POST['me'],    
         ); 
 
@@ -463,7 +461,7 @@ try
 
     $query_params = array( 
 
-            ':email' => $_POST['email']
+            ':email' => $_POST['email'],
 
             );
 
@@ -495,7 +493,7 @@ try
 
 
 
-            if($_SESSION['user']['mentor']==1)
+            if($_SESSION['mentor']==1)
 
                 { 
 
@@ -507,7 +505,9 @@ try
                     :college,
                     :major
 
-                    )";
+                    )
+
+                    ";
 
             $query_params = array( 
 
@@ -543,7 +543,9 @@ try
                     0,
                     0
 
-                    )";
+                    )
+
+                    ";
 
             $query_params = array( 
 
@@ -611,6 +613,7 @@ try
         <li>Time</li> 
         <li>Availability</li>  
         <li>Profile</li>  
+        <li>Mentors Only</li>
     </ul>
     <!-- fieldsets -->
     <fieldset>
@@ -667,7 +670,7 @@ try
     <th> <div class="squaredOne" id="english">
              <input type="checkbox" value="1" id="englishl" name="english"/>
             <label for="englishl">English</label></div></th>
-    <th>  <div class="  quaredOne" id="art">
+    <th>  <div class=" squaredOne" id="art">
              <input type="checkbox" value="1" id="artl" name="art"/>
             <label for="artl">Art</label></div></th>
 
@@ -870,7 +873,19 @@ try
 
         <textarea name="me" id="bio" placeholder="Write a few sentences about yourself for your profile."></textarea>
 
-        <input type="text" name="state" id="city" placeholder="What state do you live in?" />
+        <input type="text" name="zipcode" id="city" placeholder="What state do you live in?" />
+
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Mentors Only</h2>
+        <h3 class="fs-subtitle">Please only answer if you are a college student. Otherwise, click register!</h3>
+
+        <input type="text" name="major" id="city" placeholder="What college do you attend?" />
+
+        <input type="text" name="major" id="city" placeholder="What is your college major?" />
 
         <input type="button" name="previous" class="previous action-button" value="Previous" />
 
