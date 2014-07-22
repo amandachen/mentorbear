@@ -24,13 +24,13 @@
                 mentor
             FROM userz
             WHERE 
-                username = :username 
+                email = :email 
         "; 
          
 
         // The parameter values 
         $query_params = array( 
-            ':username' => $_POST['username'] 
+            ':email' => $_POST['email'] 
         ); 
          
         try 
@@ -131,8 +131,9 @@
                 im,
                 other,
                 zipcode,
-                time,
-                available,
+                weekdays,
+                saturdays,
+                sundays,
                 me,
                 photo
 
@@ -253,7 +254,7 @@
             // always use htmlentities on user submitted values before displaying them 
             // to any users (including the user that submitted them).  For more information: 
             // http://en.wikipedia.org/wiki/XSS_attack 
-            $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8'); 
+            $submitted_username = htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8'); 
         } 
     } 
      
@@ -279,7 +280,7 @@
       <img src="http://mentorbear.com/img/bear.png">
 		</div>
 		<form action="login.php" method="post"> 
-		<input type="text" placeholder="username" name="username" value="<?php echo $submitted_username; ?>" required>
+		<input type="text" placeholder="email" name="email" value="<?php echo $submitted_username; ?>" required>
 		<div class="bar">
 			<i></i>
 		</div>

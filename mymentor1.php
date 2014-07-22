@@ -423,11 +423,11 @@ $_SESSION['viewingmentor']=$z;
                                                                 <div class="service-detail">
                                                                     <h6>Favorite Animals</h6>
                                                                     <h6></h6>
-                                                                    <?php echo $_SESSION['savedprof'][$z]['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['savedprof'][$z]['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['savedprof'][$z]['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['savedprof'][$z]['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['savedprof'][$z]['extra5']."<br>"; ?>
+                                                                    <p>Panda Bear</p>
+                                                                    <p>Brown Bear</p>
+                                                                    <p>Black Bear</p>
+                                                                    <p>Polar Bear</p>
+                                                                    <p>Grizzly Bear</p>    
                                                                 </div>
                                                             </div>
                                                         </div>

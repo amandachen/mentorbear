@@ -162,7 +162,7 @@
 
                                                                      ?> Student</span>
                                                                 <div class="clear"></div></h4>
-                                                <h6><span class="fa fa-map-marker"></span> <?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                <h6><span class="fa fa-map-marker"></span> <?php echo htmlentities($_SESSION['userprof']['state'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
@@ -1252,7 +1252,7 @@
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
                                                                 <label>Zip Code</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
@@ -1417,13 +1417,13 @@
                                                             <div class="service center">
                                                                 <div class="service-icon"><i class="fa fa-smile-o"></i></div>
                                                                 <div class="service-detail">
-                                                                    <h6>Favorite Animal</h6>
-                                                                    <h6></h6>
-                                                                    <?php echo $_SESSION['userprof']['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['userprof']['extra5']."<br>"; ?>
+                                                                    <h6>Favorite Animals</h6>
+                                                                    <p>Panda Bear</p>
+                                                                    <p>Brown Bear</p>
+                                                                    <p>Black Bear</p>
+                                                                    <p>Polar Bear</p>
+                                                                    <p>Grizzly Bear</p>
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>

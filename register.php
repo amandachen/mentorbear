@@ -38,48 +38,11 @@
         // user is already in use.  A SELECT query is used to retrieve data from the database. 
         // :username is a special token, we will substitute a real value in its place when 
         // we execute the query. 
-        $query = " 
-            SELECT 
-                1 
-            FROM userz 
-            WHERE 
-                username = :username 
-        "; 
-         
-        // This contains the definitions for any special tokens that we place in 
-        // our SQL query.  In this case, we are defining a value for the token 
-        // :username.  It is possible to insert $_POST['username'] directly into 
-        // your $query string; however doing so is very insecure and opens your 
-        // code up to SQL injection exploits.  Using tokens prevents this. 
-        // For more information on SQL injections, see Wikipedia: 
-        // http://en.wikipedia.org/wiki/SQL_Injection 
-        $query_params = array( 
-            ':username' => $_POST['username'] 
-        ); 
-         
-        try 
-        { 
-            // These two statements run the query against your database table. 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex) 
-        { 
-            // Note: On a production website, you should not output $ex->getMessage(). 
-            // It may provide an attacker with helpful information about your code.  
-            die("Failed to run query: " . $ex->getMessage()); 
-        } 
+       
          
         // The fetch() method returns an array representing the "next" row from 
         // the selected results, or false if there are no more rows to fetch. 
-        $row = $stmt->fetch(); 
-         
-        // If a row was returned, then we know a matching username was found in 
-        // the database already and we should not allow the user to continue. 
-        if($row) 
-        { 
-            die("This username is already in use"); 
-        } 
+       
          
         // Now we perform the same type of check for the email address, in order 
         // to ensure that it is unique. 
@@ -397,7 +360,7 @@ $query = "
                 :extra3,
                 :extra4,
                 :extra5,
-                :url,
+                :photo,
                 :state,
                 :me
 
@@ -441,7 +404,7 @@ $query = "
             ':extra3' => $_POST['extra3'],
             ':extra4' => $_POST['extra4'],
             ':extra5' => $_POST['extra5'],
-            ':url' => 0,
+            ':url' => 'http://placehold.it/348x456',
             ':state' => $_POST['state'],
             ':me' => $_POST['me'],    
         ); 

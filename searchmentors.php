@@ -376,9 +376,12 @@ function get_mentees() {
                 phone,
                 im,
                 other,
-                zipcode,
+                state,
                 time,
-                available,
+                
+                weekdays,
+                saturdays,
+                sundays,
                 me,
                 photo
 
