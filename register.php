@@ -459,7 +459,7 @@ try
 
 
 
-            if($_SESSION['user']['mentor']==1)
+            if($_POST['mentor']==1)
 
                 { 
 
@@ -477,7 +477,7 @@ try
 
             ':id' => $id[0],
             ':college' => $_POST['college'],
-            ':major' => $_POST['major'],
+            ':major' => $_POST['major']
 
             );
 
@@ -716,6 +716,7 @@ try
 
     <fieldset>
         <h2 class="fs-title">Do you have a gender preference for your mentor/mentee?</h2>
+         <h3 class="fs-subtitle">Please choose only one option...</h3>
        <div class="squaredOne" id="genderpref">
              <input type="checkbox" value="1" id="female1" name="genderpref" />
             <label for="female1">Female only</label>

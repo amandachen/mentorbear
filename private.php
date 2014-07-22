@@ -15,6 +15,16 @@
         die("Redirecting to login.php"); 
     } 
      
+         if(!$_SESSION['user']['mentor']==0) 
+    { 
+        // If they are not, we redirect them to the login page. 
+        header("Location: mentor.php"); 
+         
+        // Remember that this die statement is absolutely critical.  Without it, 
+        // people can view your members-only content without logging in. 
+        die("Redirecting to mentor.php"); 
+    } 
+     
     // Everything below this point in the file is secured by the login system 
      
     // We can display the user's username to them by reading it from the session array.  Remember that because 
@@ -211,18 +221,18 @@
 
                                             <li class="tabs-resume hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="resume"> 
                                                 <span class="tite-list">resume</span>
-                                                <i class="fa fa-briefcase icon_menu"></i>
+                                                <i class="fa fa-users icon_menu"></i>
                                             </li>
 
                                             <li class="tabs-portfolio hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="portfolio"> 
                                                 <span class="tite-list">portfolio</span>
-                                                <i class="fa fa-tasks icon_menu"></i>
+                                                <i class="fa fa-search icon_menu"></i>
                                             </li>
 
                                             
                                             <li class="tabs-contact hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="contact" style="margin-bottom: 48px !important;"> 
                                                 <span class="tite-list">contact</span>
-                                                 <i class="fa fa-tasks icon_menu"></i>
+                                                 <i class="fa fa-key icon_menu"></i>
                                             </li>
 
                                             
