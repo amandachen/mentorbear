@@ -781,7 +781,7 @@ try
 
 
             <fieldset>
-        <h2 class="fs-title">In which areas would you most value a mentor?</h2>
+        <h2 class="fs-title">In which areas would you most value being mentored in/mentor in?</h2>
         <h3 class="fs-subtitle">Choose as many as you'd like</h3>
        <div class="squaredOne" id="Academics">
              <input type="checkbox" value="1" id="academics1" name="academics" />
