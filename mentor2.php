@@ -197,25 +197,19 @@ if($_SESSION['mentormax']) {
                                     <div class="row">
 
                                         <!-- Profile Image -->
-                                        <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
+                                         <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
 
-                                            <div class="image-holder one" id="pic_prof_1"  style="display:none">
-
-                                                <img class="head-image up circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-left circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image down-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image up-right circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
-                                                <img class="head-image front circle" src="http://placehold.it/150x150" width="150" height="150" alt="" />
+                                            
+                                            
+                                            <div class="image-holder one" id="pic_prof_1"  >
+                                                
+                                                <img class="head-image up circle center-cropped3" style="background-image" src=<?php echo $_SESSION['prof3'][$z]['photo']; ?>  alt="" />
+                                               
 
                                             </div>
 
                                             <!-- style for simple image profile -->     
-                                            <div class="circle-img" id="pic_prof_2"></div>
-
+                                           
                                         </div>
                                         <!-- End Profile Image -->
 
@@ -224,48 +218,36 @@ if($_SESSION['mentormax']) {
                                             <!-- Profile info -->
                                             <div id="profile_info">
 
-                                                <h1 id="name" class="transition-02"><?php 
-
-                                            
-
-                                                echo htmlentities($_SESSION['name3'][1]['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
-                                                <h4 class="line"><span class="value"><?php if($_SESSION['prof3'][0]['hschool']==1) {
+                                                <h1 id="name" class="transition-02"><h1 id="name" class="transition-02"><?php echo htmlentities($_SESSION['names3'][$z]['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
+                                                <h4 class="line"><span class="value"><?php if($_SESSION['prof3'][$z]['hschool']==1) {
                                                                         echo "High School";
                                                                     } else {
                                                                         echo "College";
+                                                                        
                                                                     }
 
                                                                      ?> Student</span>
                                                                 <div class="clear"></div></h4>
                                                 <h6><span class="fa fa-map-marker"></span> <?php 
 
-                                                echo htmlentities($_SESSION['prof3'][0]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                echo htmlentities($_SESSION['prof3'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
 
                                             <!-- Profile Description -->
                                             <div id="profile_desc">
-                                                <p>
-                                                    <?php var_dump($goview); var_dump($newvcount); ?>
-                                                </p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing eli
-                                                </p>
+                                                
                                             </div>
                                             <!-- End Profile Description -->  
 
 
                                             <!-- Name -->
-                                            <div id="profile_social">
-                                                <h6>My Social Profiles</h6>
-                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                <a href="#"><i class="fa fa fa-dribbble"></i></a>
-                                                <a href="#"><i class="fa fa-foursquare"></i></a>
+                                             <div id="profile_social">
+                                                <h6></h6>
+                                                    <h6>Chat Coming Soon</h6>
                                                 <div class="clear"></div>
-                                            </div>
+                                            </div> 
                                             <!-- End Name -->  
 
                                         </div>
@@ -338,7 +320,7 @@ if($_SESSION['mentormax']) {
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
                                                                 <label>Zip Code</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['prof3'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['prof3'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 
@@ -397,14 +379,15 @@ if($_SESSION['mentormax']) {
                                                     </div>
                                                     <!-- End left-wrap -->
 
-                                                    <div class="col-md-6 profile-r">
+                                                     <div  class="col-md-6 profile-r " >
 
-                                                        <div class="cycle-slideshow">
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                            <img src="http://placehold.it/348x456" alt="" />
-                                                        </div>
-
+                                                            
+                                                            <img class="center-cropped2" id='profimg' style="background-image" src=<?php echo $_SESSION['prof3'][$z]['photo']; ?> alt="" />
+                                                
+                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
+                                                            <label></label><input type="string" name="image" placeholder="Change Image URL"/>
+                                                            <input type="submit" />
+                                                            </form>
                                                     </div>
 
                                                 </div>
@@ -498,13 +481,13 @@ if($_SESSION['mentormax']) {
                                                             <div class="service center">
                                                                 <div class="service-icon"><i class="fa fa-star"></i></div>
                                                                 <div class="service-detail">
-                                                                    <h6>Favorite Animals</h6>
+                                                                   <h6>Favorite Animals</h6>
                                                                     <h6></h6>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra1']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra2']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra3']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra4']."<br>"; ?>
-                                                                    <?php echo $_SESSION['prof3'][$z]['extra5']."<br>"; ?>
+                                                                    <p>Panda Bear</p>
+                                                                    <p>Brown Bear</p>
+                                                                    <p>Black Bear</p>
+                                                                    <p>Polar Bear</p>
+                                                                    <p>Grizzly Bear</p>    
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -577,7 +560,7 @@ if($_SESSION['mentormax']) {
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                                What I'd like in a mentor...
+                                                                            Days Available
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
@@ -588,11 +571,12 @@ if($_SESSION['mentormax']) {
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                
                                                                 <div class="panel panel-default">
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                My Availability
+                                                                                Time Available
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
