@@ -246,7 +246,7 @@ function savedmentors() {
            
     $queryfind3 = " 
         SELECT  
-        college, major
+        id, college, major
         FROM mentors
         WHERE 
         id IN (:id, :id1, :id2)

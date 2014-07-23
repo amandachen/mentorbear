@@ -1604,8 +1604,8 @@
                                                             <a href="mymentor1.php"> <div class="mask" rel="portfolio" >
                                                                
                                                                 <h2><?php echo $_SESSION['savednaem'][0]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][0][0]; ?></p>
                                                                 <p><?php  echo $_SESSION['savedid'][0][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['savedid'][0][2]; ?></p>
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
@@ -1626,8 +1626,8 @@
                                                             <a href="mymentor2.php"> <div class="mask" rel="portfolio" >
                                                                
                                                                 <h2><?php echo $_SESSION['savednaem'][1]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][1][0]; ?></p>
                                                                 <p><?php  echo $_SESSION['savedid'][1][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['savedid'][1][2]; ?></p>
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
@@ -1646,8 +1646,8 @@
                                                             <a href="mymentor3.php"> <div class="mask" rel="portfolio" >
                                                                
                                                                 <h2><?php echo $_SESSION['savednaem'][2]['username']; ?></h2>
-                                                                <p><?php  echo $_SESSION['savedid'][2][0]; ?></p>
                                                                 <p><?php  echo $_SESSION['savedid'][2][1]; ?></p>
+                                                                <p><?php  echo $_SESSION['savedid'][2][2]; ?></p>
                                                             </div></a>
                                                             </div> 
                                                     <?php } else { ?>
