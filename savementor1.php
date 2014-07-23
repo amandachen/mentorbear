@@ -15,6 +15,8 @@
         die("Redirecting to login.php"); 
     } 
 
+
+
 $z=0;
 
 
@@ -173,7 +175,7 @@ $new=false;
 
             $_SESSION['mentorids'] = $stmt->fetch(PDO::FETCH_NUM); 
             $_SESSION['savedmentor']=true;
-            header("Location: mentor".($z+1).".php"); 
+            header("Location: private.php"); 
 
    
 
