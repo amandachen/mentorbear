@@ -543,7 +543,7 @@ try
                     INSERT INTO views (id,vcount)
                     VALUES (
                     :id,
-                    0
+                    -100
                     
 
                     )";
