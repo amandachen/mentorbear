@@ -795,7 +795,7 @@ try
         </div>
         <div class="squaredOne" id="transitioning">
              <input type="checkbox" value="1" id="transitioning1" name="transitioning"/>
-             <label for="transitioning1">Transitioning to College</label>
+             <label for="transitioning1">Transition to College</label>
         </div>
          <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
