@@ -169,7 +169,7 @@ $_SESSION['viewingmentor']=$z;
                                                                 <div class="clear"></div></h4>
                                                 <h6><span class="fa fa-map-marker"></span> <?php 
 
-                                                echo htmlentities($_SESSION['savedprof'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                echo htmlentities($_SESSION['savedprof'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
@@ -260,7 +260,7 @@ $_SESSION['viewingmentor']=$z;
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
                                                                 <label>State</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['savedprof'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['savedprof'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 

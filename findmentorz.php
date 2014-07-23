@@ -188,7 +188,7 @@
 
                                                                      ?> Student</span>
                                                                 <div class="clear"></div></h4>
-                                                <h6><span class="fa fa-map-marker"></span> <?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                                                <h6><span class="fa fa-map-marker"></span> <?php echo htmlentities($_SESSION['userprof']['state'], ENT_QUOTES, 'UTF-8'); ?></h6>
                                             </div>
                                             <!-- End Profile info -->  
 
@@ -310,7 +310,7 @@
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
                                                                 <label>State</label>
-                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                                                <span class="value"><?php echo htmlentities($_SESSION['userprof']['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
 

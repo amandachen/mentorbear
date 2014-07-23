@@ -2,8 +2,8 @@
 require("common.php"); 
      
         $query = " 
-            UPDATE `MentorTest2`.`profiles` SET `photo` = 
-            :photo WHERE `profiles`.`id` = :userid
+            UPDATE profiles SET photo = 
+            :photo WHERE id = :userid
 
             
         "; 
