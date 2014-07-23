@@ -334,7 +334,7 @@ if($_SESSION['mentormax']) {
                                                             <li>
                                                                 <i class="glyphicon glyphicon-phone"></i>
                                                                 <label>Gender</label>
-                                                                <span class="value"><?php if($_SESSION['prof3'][$z]['gender']==1) {
+                                                                <span class="value"><?php if($_SESSION['prof3'][$z]['female']==1) {
                                                                         echo "Female";
                                                                     } else {
                                                                         echo "Male";

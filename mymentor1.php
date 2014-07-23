@@ -274,7 +274,7 @@ $_SESSION['viewingmentor']=$z;
                                                             <li>
                                                                 <i class="glyphicon glyphicon-phone"></i>
                                                                 <label>Gender</label>
-                                                                <span class="value"><?php if($_SESSION['savedprof'][$z]['gender']==1) {
+                                                                <span class="value"><?php if($_SESSION['savedprof'][$z]['female']==1) {
                                                                         echo "Female";
                                                                     } else {
                                                                         echo "Male";
