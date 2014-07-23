@@ -8,7 +8,7 @@
     // If it has, then the registration code is run, otherwise the form is displayed 
     if(!empty($_POST)) 
     { 
-        if(empty($_POST['me'])) 
+        if(empty($_POST['time']) or empty($_POST['me'])) 
         {      
 
              die("Please complete the sign-up form."); 
