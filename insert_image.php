@@ -2,7 +2,11 @@
 require("common.php"); 
      
         $query = " 
+<<<<<<< HEAD
             UPDATE profiles SET photo = 
+=======
+            UPDATE profiles SET photo =
+>>>>>>> FETCH_HEAD
             :photo WHERE id = :userid
 
             
