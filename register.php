@@ -620,7 +620,7 @@ try
     <fieldset>
         <h2 class="fs-title">Create your account</h2>
         <h3 class="fs-subtitle">Welcome to MentorBear!</h3>
-        <input type="text" name="username" placeholder="Full Name" />
+        <input type="text" name="username" placeholder="First Name" />
         <input type="text" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
         <input type="password" name="cpass" placeholder="Confirm Password" />
@@ -815,7 +815,7 @@ try
 
         </fieldset>
         <fieldset>
-        <h2 class="fs-title">How much time would you like to spend with your mentor/mentee?</h2>
+        <h2 class="fs-title">How much time (per week) would you like to spend with your mentor/mentee?</h2>
         <h3 class="fs-subtitle">Please check one</h3>
 
        <div class="squaredOne" id="time1">

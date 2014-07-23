@@ -1357,7 +1357,7 @@
                                                                     <?php 
 
                                                         if($_SESSION['userprof']['art']==1) {
-                                                                        echo "<i class='fa fa-image'></i> Art<br>";
+                                                                        echo "<i class='fa fa-photo'></i> Art<br>";
                                                         } 
                                                         if($_SESSION['userprof']['biology']==1) {
                                                                         echo "<i class='fa fa-leaf'></i> Biology<br>";
@@ -1513,7 +1513,7 @@
                                                                     </div>
                                                                     <div id="collapseTwo" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i> 
+                                                                           
 
                                                                  <?php  if($_SESSION['userprof']['saturdays']==1) {
                                                                         echo "Saturdays <br>";
@@ -1548,7 +1548,7 @@
                                                                     </div>
                                                                     <div id="collapseThree" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  
+                                                                            
                                                                             <?php
                                                                                 
 

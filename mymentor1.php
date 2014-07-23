@@ -324,10 +324,6 @@ $_SESSION['viewingmentor']=$z;
                                                             
                                                             <img class="center-cropped2" id='profimg' style="background-image" src=<?php echo $_SESSION['savedprof'][$z]['photo']; ?> alt="" />
                                                 
-                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
-                                                            <label></label><input type="string" name="image" placeholder="Change Image URL"/>
-                                                            <input type="submit" />
-                                                            </form>
                                                     </div>
 
                                                 </div>
@@ -350,42 +346,42 @@ $_SESSION['viewingmentor']=$z;
                                                                     <h6></h6>
                                                                     <?php 
 
-                                                        if($_SESSION['savedprof'][$z]['art']==1) {
-                                                                        echo "Art <br>";
+                                                        if($_SESSION['prof3'][$z]['art']==1) {
+                                                                        echo "<i class='fa fa-photo'></i> Art<br>";
                                                         } 
-                                                        if($_SESSION['savedprof'][$z]['biology']==1) {
-                                                                        echo "Biology <br>";
+                                                        if($_SESSION['prof3'][$z]['biology']==1) {
+                                                                        echo "<i class='fa fa-leaf'></i> Biology<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['chemistry']==1) {
-                                                                        echo "Chemistry <br>";
+                                                        if($_SESSION['prof3'][$z]['chemistry']==1) {
+                                                                         echo "<i class='fa fa-flask'></i> Chemistry<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['computers']==1) {
-                                                                        echo "Computers<br>";
+                                                        if($_SESSION['prof3'][$z]['computers']==1) {
+                                                                        echo "<i class='fa fa-laptop' Computers></i><br>";
                                                                     }             
-                                                        if($_SESSION['savedprof'][$z]['engineering']==1) {
-                                                                        echo "Engineering<br>";
+                                                        if($_SESSION['prof3'][$z]['engineering']==1) {
+                                                                       echo "<i class='fa fa-cogs'></i> Engineering<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['economics']==1) {
-                                                                        echo "Economics<br>";
+                                                        if($_SESSION['prof3'][$z]['economics']==1) {
+                                                                        echo "<i class='fa fa-dollar'></i> Economics <br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['english']==1) {
-                                                                        echo "English <br>";
+                                                        if($_SESSION['prof3'][$z]['english']==1) {
+                                                                        echo "<i class='fa fa-pencil'></i> English<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['history']==1) {
-                                                                        echo "History <br>";
+                                                        if($_SESSION['prof3'][$z]['history']==1) {
+                                                                        echo "<i class='fa fa-backward'></i> History<br>";
                                                                     } 
 
-                                                        if($_SESSION['savedprof'][$z]['literature']==1) {
-                                                                        echo "Literature<br>";
+                                                        if($_SESSION['prof3'][$z]['literature']==1) {
+                                                                        echo "<i class='fa fa-book'></i> Literature<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['math']==1) {
-                                                                        echo "Math <br>";
+                                                        if($_SESSION['prof3'][$z]['math']==1) {
+                                                                       echo "<i class='fa fa-table'></i> Math<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['music']==1) {
-                                                                        echo "Music<br>";
+                                                        if($_SESSION['prof3'][$z]['music']==1) {
+                                                                         echo "<i class='fa fa-music'></i> Music<br>";
                                                                     } 
-                                                        if($_SESSION['savedprof'][$z]['physics']==1) {
-                                                                        echo "Physics <br>";
+                                                        if($_SESSION['prof3'][$z]['physics']==1) {
+                                                                        echo "<i class='fa fa-bolt'></i> Physics<br>";
                                                                     } 
                                                         
                                                     

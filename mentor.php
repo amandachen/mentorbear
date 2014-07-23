@@ -1340,7 +1340,7 @@
                                                                     <?php 
 
                                                         if($_SESSION['userprof']['art']==1) {
-                                                                        echo "<i class='fa fa-image'></i> Art<br>";
+                                                                        echo "<i class='fa fa-photo'></i> Art<br>";
                                                         } 
                                                         if($_SESSION['userprof']['biology']==1) {
                                                                         echo "<i class='fa fa-leaf'></i> Biology<br>";
@@ -1485,18 +1485,38 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                 <div class="panel panel-default">
+                                                                <div class="panel panel-default">
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                                What I'd like in a mentor...
+                                                                                My Availability...
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseTwo" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i> My Availabity
+                                                                          
+
+                                                                 <?php  if($_SESSION['userprof']['saturdays']==1) {
+                                                                        echo "Saturdays <br>";
+
+                                                                    }       
+                                                                    if($_SESSION['userprof']['sundays']==1) {
+                                                                        echo "Sundays <br>";
+                                                                    }
+                                                                    if($_SESSION['userprof']['weekdays']==1) {
+                                                                        echo "Weekdays <br>";
+                                                                    } 
+                                                                    
+                                                                    
+
+                                                                    ?>
+
+
+
+
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1504,32 +1524,35 @@
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                My Availability
+                                                                                Time each week I'd like to mentor...
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseThree" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i>  
+                                                                           
                                                                             <?php
-                                                                                if ($i == 0) {
-                                                                                    echo "i equals 0";
-                                                                                } elseif ($i == 1) {
-                                                                                    echo "i equals 1";
-                                                                                } elseif ($i == 2) {
-                                                                                    echo "i equals 2";
-                                                                                }
+                                                                                
 
-                                                                                switch ($i) {
-                                                                                    case 0:
-                                                                                        echo "i equals 0";
-                                                                                        break;
+                                                                                switch ($_SESSION['userprof']['time']) {
                                                                                     case 1:
-                                                                                        echo "i equals 1";
+                                                                                        echo "15-30 Minutes";
                                                                                         break;
                                                                                     case 2:
-                                                                                        echo "i equals 2";
+                                                                                        echo "30-45 Minutes";
+                                                                                        break;
+                                                                                    case 3:
+                                                                                        echo "45-60 Minutes";
+                                                                                        break;
+                                                                                    case 4:
+                                                                                        echo "1-1.5 Hours";
+                                                                                        break;
+                                                                                    case 5:
+                                                                                        echo "1.5-3 Hours";
+                                                                                        break;
+                                                                                    case 6:
+                                                                                        echo "3+ Hours";
                                                                                         break;
                                                                                 }
                                                                                 ?>
