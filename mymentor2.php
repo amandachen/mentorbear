@@ -259,7 +259,7 @@ $_SESSION['viewingmentor']=$z;
 
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Zip Code</label>
+                                                                <label>State</label>
                                                                 <span class="value"><?php echo htmlentities($_SESSION['savedprof'][$z]['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>

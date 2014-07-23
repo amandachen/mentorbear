@@ -319,7 +319,7 @@ if($_SESSION['mentormax']) {
 
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Zip Code</label>
+                                                                <label>State</label>
                                                                 <span class="value"><?php echo htmlentities($_SESSION['prof3'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>

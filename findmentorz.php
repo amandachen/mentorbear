@@ -309,7 +309,7 @@
 
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Zip Code</label>
+                                                                <label>State</label>
                                                                 <span class="value"><?php echo htmlentities($_SESSION['userprof']['zipcode'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>

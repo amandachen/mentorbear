@@ -3,12 +3,17 @@
     // First we execute our common code to connection to the database and start the session 
     require("common.php"); 
      
-     
 
     // This if statement checks to determine whether the registration form has been submitted 
     // If it has, then the registration code is run, otherwise the form is displayed 
     if(!empty($_POST)) 
     { 
+        if(empty($_POST['me'])) 
+        {      
+
+             die("Please complete the sign-up form."); 
+
+        }
         // Ensure that the user has entered a non-empty username 
         if(empty($_POST['username'])) 
         { 
@@ -284,6 +289,38 @@
             // It may provide an attacker with helpful information about your code.  
             die("Failed to run query: " . $ex->getMessage()); 
         } 
+
+            $query_params = array( 
+
+            ':email' => $_POST['email']
+
+            );
+
+    $query = " 
+            SELECT  
+                id
+
+                FROM userz
+                WHERE 
+                email = :email
+                "; 
+
+                try 
+                { 
+                    // Execute the query against the database 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex) 
+                { 
+                    // Note: On a production website, you should not output $ex->getMessage(). 
+                    // It may provide an attacker with helpful information about your code.  
+                    die("Failed to run mentor query: " . $ex->getMessage()); 
+                } 
+            
+                $id = $stmt->fetch(PDO::FETCH_NUM); 
+
+                $_SESSION['id'] = $id[0];
          
 $query = "
 
@@ -305,6 +342,7 @@ $query = "
                 email2,
                 vchat,
                 im,
+                id,
                 phone,
                 other,
                 academics,
@@ -344,6 +382,7 @@ $query = "
                 :email2,
                 :vchat,
                 :im,
+                :id,
                 :phone,
                 :other,
                 :academics,
@@ -407,7 +446,8 @@ $query = "
             ':extra5' => $_POST['extra5'],
             ':photo' => 'http://placehold.it/348x456',
             ':state' => $_POST['state'],
-            ':me' => $_POST['me'],    
+            ':me' => $_POST['me'],   
+            ':id' =>$id[0]  
         ); 
 
 try 
@@ -425,37 +465,7 @@ try
          
  
 
-    $query_params = array( 
 
-            ':email' => $_POST['email']
-
-            );
-
-    $query = " 
-            SELECT  
-                id
-
-                FROM userz
-                WHERE 
-                email = :email
-                "; 
-
-                try 
-                { 
-                    // Execute the query against the database 
-                    $stmt = $db->prepare($query); 
-                    $result = $stmt->execute($query_params); 
-                } 
-                catch(PDOException $ex) 
-                { 
-                    // Note: On a production website, you should not output $ex->getMessage(). 
-                    // It may provide an attacker with helpful information about your code.  
-                    die("Failed to run mentor query: " . $ex->getMessage()); 
-                } 
-            
-                $id = $stmt->fetch(PDO::FETCH_NUM); 
-
-                $_SESSION['id'] = $id[0];
 
 
 
@@ -723,11 +733,11 @@ try
             <label for="female1">Female only</label>
         </div>
         <div class="squaredOne" id="maleonly">
-             <input type="checkbox" value="1" id="male1" name="genderpref"/>
+             <input type="checkbox" value="2" id="male1" name="genderpref"/>
             <label for="male1">Male only</label>
         </div>
         <div class="squaredOne" id="dontmind">
-             <input type="checkbox" value="1" id="dm" name="genderpref"/>
+             <input type="checkbox" value="3" id="dm" name="genderpref"/>
             <label for="dm">I don't mind</label>
         </div>
          <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -873,7 +883,7 @@ try
     </fieldset>
     <fieldset>
         <h2 class="fs-title">Mentors Only</h2>
-        <h3 class="fs-subtitle">Please only answer if you are a college student. Otherwise, click register!</h3>
+        <h3 class="fs-subtitle">Please only answer if you are a college student. Otherwise, just click register!</h3>
 
         <input type="text" name="college" id="city" placeholder="What college do you attend?" />
 
