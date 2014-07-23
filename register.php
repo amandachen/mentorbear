@@ -603,7 +603,8 @@ try
         <li>Mentoring</li> 
         <li>Time</li> 
         <li>Availability</li>  
-        <li>Profile</li>  
+        <li>Profile</li>
+        <li>Mentors Only</li>  
     </ul>
     <!-- fieldsets -->
     <fieldset>
@@ -717,7 +718,7 @@ try
     <fieldset>
         <h2 class="fs-title">Do you have a gender preference for your mentor/mentee?</h2>
          <h3 class="fs-subtitle">Please choose only one option...</h3>
-       <div class="squaredOne" id="genderpref">
+       <div class="squaredOne" id="femaleonly">
              <input type="checkbox" value="1" id="female1" name="genderpref" />
             <label for="female1">Female only</label>
         </div>
@@ -865,6 +866,18 @@ try
         <textarea name="me" id="bio" placeholder="Write a few sentences about yourself for your profile."></textarea>
 
         <input type="text" name="state" id="city" placeholder="What state do you live in?" />
+
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+        
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Mentors Only</h2>
+        <h3 class="fs-subtitle">Please only answer if you are a college student. Otherwise, click register!</h3>
+
+        <input type="text" name="college" id="city" placeholder="What college do you attend?" />
+
+        <input type="text" name="major" id="city" placeholder="What is your college major?" />
 
         <input type="button" name="previous" class="previous action-button" value="Previous" />
 
