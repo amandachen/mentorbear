@@ -38,7 +38,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
 
-        <title>FlexyCard HTML5 Responsive vCard Template - FlexyCodes Themes</title>
+        <title>Mentor Bear | Profile</title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
