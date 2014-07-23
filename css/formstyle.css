@@ -17,7 +17,7 @@ body {
 }
 /*form styles*/
 #msform {
-	width: 650px;
+	width: 750px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
@@ -98,7 +98,11 @@ body {
 	color: white; /*color of progress bar text */
 	text-transform: uppercase;
 	font-size: 9px;
+<<<<<<< HEAD
 	width: 9%; 
+=======
+	width: 9%;
+>>>>>>> origin/master
 	float: left;
 	position: relative;
 }
@@ -326,7 +330,7 @@ input[type=radio] {
 	content: 'Male only';
 }
 #dontmind label:after{
-	content: 'I dont mind';
+	content: "I don't mind";
 }
 
 /* Preferred means of communication */

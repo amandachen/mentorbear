@@ -104,6 +104,7 @@ function get_mentors_3() {
                 saturdays,
                 sundays,
                 me,
+                time,
                 photo
 
 
@@ -152,7 +153,7 @@ function savedmentors() {
                 history,
                 chemistry,
                 economics,
-                
+                time,
                 physics,
                 
                 biology,
@@ -361,7 +362,7 @@ function get_mentees() {
                 
                 biology,
                 art,
-                
+                time,
                 literature,
                 extra1,
                 extra2,

@@ -319,7 +319,7 @@ if($_SESSION['mentormax']) {
 
                                                             <li> 
                                                                 <i class="glyphicon glyphicon-map-marker"></i>
-                                                                <label>Zip Code</label>
+                                                                <label>State</label>
                                                                 <span class="value"><?php echo htmlentities($_SESSION['prof3'][$z]['state'], ENT_QUOTES, 'UTF-8'); ?></span>
                                                                 <div class="clear"></div>
                                                             </li>
@@ -384,10 +384,7 @@ if($_SESSION['mentormax']) {
                                                             
                                                             <img class="center-cropped2" id='profimg' style="background-image" src=<?php echo $_SESSION['prof3'][$z]['photo']; ?> alt="" />
                                                 
-                                                            <form action="insert_image.php" method="POST" enctype="multipart/form-data">
-                                                            <label></label><input type="string" name="image" placeholder="Change Image URL"/>
-                                                            <input type="submit" />
-                                                            </form>
+                                                           
                                                     </div>
 
                                                 </div>
@@ -411,41 +408,41 @@ if($_SESSION['mentormax']) {
                                                                     <?php 
 
                                                         if($_SESSION['prof3'][$z]['art']==1) {
-                                                                        echo "Art <br>";
+                                                                        echo "<i class='fa fa-photo'></i> Art<br>";
                                                         } 
                                                         if($_SESSION['prof3'][$z]['biology']==1) {
-                                                                        echo "Biology <br>";
+                                                                        echo "<i class='fa fa-leaf'></i> Biology<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['chemistry']==1) {
-                                                                        echo "Chemistry <br>";
+                                                                         echo "<i class='fa fa-flask'></i> Chemistry<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['computers']==1) {
-                                                                        echo "Computers<br>";
+                                                                        echo "<i class='fa fa-laptop' Computers></i><br>";
                                                                     }             
                                                         if($_SESSION['prof3'][$z]['engineering']==1) {
-                                                                        echo "Engineering<br>";
+                                                                       echo "<i class='fa fa-cogs'></i> Engineering<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['economics']==1) {
-                                                                        echo "Economics<br>";
+                                                                        echo "<i class='fa fa-dollar'></i> Economics <br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['english']==1) {
-                                                                        echo "English <br>";
+                                                                        echo "<i class='fa fa-pencil'></i> English<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['history']==1) {
-                                                                        echo "History <br>";
+                                                                        echo "<i class='fa fa-backward'></i> History<br>";
                                                                     } 
 
                                                         if($_SESSION['prof3'][$z]['literature']==1) {
-                                                                        echo "Literature<br>";
+                                                                        echo "<i class='fa fa-book'></i> Literature<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['math']==1) {
-                                                                        echo "Math <br>";
+                                                                       echo "<i class='fa fa-table'></i> Math<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['music']==1) {
-                                                                        echo "Music<br>";
+                                                                         echo "<i class='fa fa-music'></i> Music<br>";
                                                                     } 
                                                         if($_SESSION['prof3'][$z]['physics']==1) {
-                                                                        echo "Physics <br>";
+                                                                        echo "<i class='fa fa-bolt'></i> Physics<br>";
                                                                     } 
                                                         
                                                     
@@ -560,23 +557,42 @@ if($_SESSION['mentormax']) {
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapse_tabs">
-                                                                            Days Available
+                                                                                My Availability...
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
                                                                     </div>
                                                                     <div id="collapseTwo" class="panel-collapse collapse">
                                                                         <div class="panel-body">
-                                                                            <i class="fa fa-quote-left"></i> My Availabity
+                                                                           
+
+                                                                 <?php  if($_SESSION['prof3'][$z]['saturdays']==1) {
+                                                                        echo "Saturdays <br>";
+
+                                                                    }       
+                                                                    if($_SESSION['prof3'][$z]['sundays']==1) {
+                                                                        echo "Sundays <br>";
+                                                                    }
+                                                                    if($_SESSION['prof3'][$z]['weekdays']==1) {
+                                                                        echo "Weekdays <br>";
+                                                                    } 
+                                                                    
+                                                                    
+
+                                                                    ?>
+
+
+
+
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
                                                                 <div class="panel panel-default">
                                                                     <div class="panel-heading">
                                                                         <h4 class="panel-title">
                                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapse_tabs">
-                                                                                Time Available
+                                                                                Time each week I'd like to mentor...
                                                                                 <i class="glyphicon glyphicon-chevron-down" style="float: right;font-size: 13px;"></i>
                                                                             </a>
                                                                         </h4>
@@ -585,23 +601,26 @@ if($_SESSION['mentormax']) {
                                                                         <div class="panel-body">
                                                                             <i class="fa fa-quote-left"></i>  
                                                                             <?php
-                                                                                if ($i == 0) {
-                                                                                    echo "i equals 0";
-                                                                                } elseif ($i == 1) {
-                                                                                    echo "i equals 1";
-                                                                                } elseif ($i == 2) {
-                                                                                    echo "i equals 2";
-                                                                                }
+                                                                                
 
-                                                                                switch ($i) {
-                                                                                    case 0:
-                                                                                        echo "i equals 0";
-                                                                                        break;
+                                                                                switch ($_SESSION['prof3'][$z]['time']) {
                                                                                     case 1:
-                                                                                        echo "i equals 1";
+                                                                                        echo "15-30 Minutes";
                                                                                         break;
                                                                                     case 2:
-                                                                                        echo "i equals 2";
+                                                                                        echo "30-45 Minutes";
+                                                                                        break;
+                                                                                    case 3:
+                                                                                        echo "45-60 Minutes";
+                                                                                        break;
+                                                                                    case 4:
+                                                                                        echo "1-1.5 Hours";
+                                                                                        break;
+                                                                                    case 5:
+                                                                                        echo "1.5-3 Hours";
+                                                                                        break;
+                                                                                    case 6:
+                                                                                        echo "3+ Hours";
                                                                                         break;
                                                                                 }
                                                                                 ?>
