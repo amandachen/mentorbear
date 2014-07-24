@@ -1625,7 +1625,7 @@
     
                                                     <?php if(!$_SESSION['menteesid'][2]==0) {
                                                     ?> <div class="view view-first portfolio logo" data-cat="logo">
-                                                            <img src=<?php echo $_SESSION['menteesprof'][1]['photo']; ?> alt"Add More Mentors"/>
+                                                            <img src=<?php echo $_SESSION['menteesprof'][2]['photo']; ?> alt"Add More Mentors"/>
                                                             <a href="#"> <div class="mask" rel="portfolio" >
                                                                
                                                                 <h2><?php echo $_SESSION['menteesnames'][2]['username']; ?></h2>

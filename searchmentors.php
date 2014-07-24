@@ -285,7 +285,7 @@ function get_mentees() {
         id
         FROM mentees
         WHERE 
-        mentorid1=:myid
+        mentorid1=:myid or mentorid2 = :myid or mentorid3 = :myid
         "; 
 
       try 
