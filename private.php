@@ -102,6 +102,10 @@
             }           
 
         </style>
+        
+        <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/chat.css" />
 
     </head>
 
@@ -191,11 +195,35 @@
 
                                             <!-- Name -->
                                             <div id="profile_social">
-                                                <h6></h6>
-                                                    <h6>Chat Coming Soon</h6>
+                                                <div id='messagesDiv'></div>
+<input type='text' id='nameInput' placeholder='Name'>
+<input type='text' id='messageInput' placeholder='Message...'>
+<script type='text/javascript'>
+
+  // Get a reference to the root of the chat data.
+  var messagesRef = new Firebase('crackling-fire-7217.firebaseio.com');
+
+
+  // When the user presses enter on the message input, write the message to firebase.
+  $('#messageInput').keypress(function (e) {
+    if (e.keyCode == 13) {
+      var name = $('#nameInput').val();
+      var text = $('#messageInput').val();
+      messagesRef.push({name:name, text:text});
+      $('#messageInput').val('');
+    }
+  });
+
+  // Add a callback that is triggered for each chat message.
+  messagesRef.on('child_added', function (snapshot) {
+    var message = snapshot.val();
+    $('<div/>').text(message.text).prepend($('<em/>').text(message.name+': ')).appendTo($('#messagesDiv'));
+    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+  });
+</script>
                                                 <div class="clear"></div>
                                             </div> 
-                                            <!-- End Name -->  
+                                            <!-- End Name --> 
 
                                         </div>
 
@@ -518,11 +546,11 @@
 
 
                                                                             <div class="title_content">
-                                                                                <div class="text_content">Blog Post Gallery</div>
+                                                                                <div class="text_content">Mentor Bear goes live!</div>
                                                                                 <div class="clear"></div>
                                                                             </div>
 
-                                                                            <p class="caps">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with.</p>
+                                                                            <p class="caps">Mentor Bear has officially gone live. We are welcoming all beta testers to play around with our website and find their mentors. Find a mentor with a common interest by going to the "Find Mentors" bar and clicking on various profiles. Have fun </p>
 
                                                                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
@@ -548,7 +576,7 @@
 
                                                                                 <div class="about_author">
                                                                                     <div class="title_content" style="margin-bottom:10px">
-                                                                                        <div class="text_content">BILL GATES</div>
+                                                                                        <div class="text_content">Kevin Johnson</div>
                                                                                         <div class="clear"></div>
                                                                                     </div>
 
@@ -558,10 +586,7 @@
                                                                                         <img src="http://placehold.it/100x100" width="100" height="100" alt="img">
 
                                                                                         <div class="text">
-                                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                                            adipiscing elit. Praesent condimentum sed elit
-                                                                                            vitae tristique. Aliquam erat volutpat. Nunc sit
-                                                                                            amet cursus libero. In fringilla egestas ornare.
+                                                                                            This is freaking awesome. Kudos to the MentorBeam team lol!
                                                                                         </div>
 
                                                                                         <div class="nb_post" style="margin-top: 10px;">

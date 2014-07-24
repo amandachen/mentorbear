@@ -540,7 +540,7 @@ try
 
                  $query= "
 
-                    INSERT INTO views (id,vcount)
+                    INSERT INTO Views (id,vcount)
                     VALUES (
                     :id,
                     -100

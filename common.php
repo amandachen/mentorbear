@@ -6,6 +6,11 @@
     $host = "localhost"; 
     $dbname = "mentorbe_test2"; 
 
+    /* $username = "root"; 
+    $password = ""; 
+    $host = "localhost"; 
+    $dbname = "mentortest2"; */
+
     // UTF-8 is a character encoding scheme that allows you to conveniently store 
     // a wide varienty of special characters, like ¢ or €, in your database. 
     // By passing the following $options array to the database connection code we 

@@ -157,6 +157,10 @@ if($_SESSION['mentormax']) {
 
         </style>
 
+        <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/chat.css" />
+        
     </head>
 
     <body>
@@ -235,17 +239,34 @@ if($_SESSION['mentormax']) {
                                             <!-- End Profile info -->  
 
 
-                                            <!-- Profile Description -->
-                                            <div id="profile_desc">
-                                                
-                                            </div>
-                                            <!-- End Profile Description -->  
+                                           <!-- Name -->
+                                            <div id="profile_social">
+                                                <div id='messagesDiv'></div>
+<input type='text' id='nameInput' placeholder='Name'>
+<input type='text' id='messageInput' placeholder='Message...'>
+<script type='text/javascript'>
+
+  // Get a reference to the root of the chat data.
+  var messagesRef = new Firebase('crackling-fire-7217.firebaseio.com');
 
 
-                                            <!-- Name -->
-                                             <div id="profile_social">
-                                                <h6></h6>
-                                                    <h6>Chat Coming Soon</h6>
+  // When the user presses enter on the message input, write the message to firebase.
+  $('#messageInput').keypress(function (e) {
+    if (e.keyCode == 13) {
+      var name = $('#nameInput').val();
+      var text = $('#messageInput').val();
+      messagesRef.push({name:name, text:text});
+      $('#messageInput').val('');
+    }
+  });
+
+  // Add a callback that is triggered for each chat message.
+  messagesRef.on('child_added', function (snapshot) {
+    var message = snapshot.val();
+    $('<div/>').text(message.text).prepend($('<em/>').text(message.name+': ')).appendTo($('#messagesDiv'));
+    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+  });
+</script>
                                                 <div class="clear"></div>
                                             </div> 
                                             <!-- End Name -->  
